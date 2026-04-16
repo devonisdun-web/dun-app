@@ -172,28 +172,39 @@
 
 
   <!-- PAYMENTS OVERLAY -->
-  <div id="payments-overlay">
-    <div class="payments-box">
-      <button class="payments-close" onclick="closePayments()">&#x2715;</button>
-      <div class="payments-title">Make a Payment</div>
-      <div class="payments-sub">Devon will send you an invoice with the amount due. Once you receive it, you can pay through any of the options below.</div>
-      <a class="payments-option" href="https://venmo.com/" target="_blank">
-        <div><div class="payments-option-name">Venmo</div><div class="payments-option-desc">@sheisdun</div></div>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a class="payments-option" href="https://cash.app/" target="_blank">
-        <div><div class="payments-option-name">Cash App</div><div class="payments-option-desc">$sheisdun</div></div>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a class="payments-option" href="mailto:devonisdun@gmail.com?subject=Payment" target="_blank">
-        <div><div class="payments-option-name">Stripe Invoice</div><div class="payments-option-desc">Request an invoice by email</div></div>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <div id="payments-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(48,18,18,0.96);z-index:9999;align-items:center;justify-content:center;padding:20px;box-sizing:border-box">
+    <div style="background:#6B5555;border:1px solid #BF8C8C;border-radius:20px;padding:28px 22px;max-width:400px;width:100%;position:relative;box-sizing:border-box">
+      <button onclick="closePayments()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:#BF8C8C;cursor:pointer;font-size:22px;line-height:1;padding:0">&#x2715;</button>
+      <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;color:#BF8C8C;margin-bottom:10px;font-weight:700">Make a Payment</div>
+      <div style="font-size:13px;color:#FCF2F2;line-height:1.7;margin-bottom:22px;opacity:0.85">Devon will send you an invoice with the amount due. Once you receive it, pay through any of the options below.</div>
+
+      <a href="https://venmo.com/" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#423232;border:1px solid #695151;border-radius:12px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA">
+        <div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Venmo</div>
+          <div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">@sheisdun</div>
+        </div>
+        <span style="color:#BF8C8C;-webkit-text-fill-color:#BF8C8C;font-size:18px">&#8594;</span>
       </a>
 
+      <a href="https://cash.app/" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#423232;border:1px solid #695151;border-radius:12px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA">
+        <div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Cash App</div>
+          <div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">$sheisdun</div>
+        </div>
+        <span style="color:#BF8C8C;-webkit-text-fill-color:#BF8C8C;font-size:18px">&#8594;</span>
+      </a>
+
+      <a href="mailto:devonisdun@gmail.com?subject=Payment%20Request" style="display:flex;align-items:center;justify-content:space-between;background:#423232;border:1px solid #695151;border-radius:12px;padding:14px 16px;margin-bottom:0;text-decoration:none;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA">
+        <div>
+          <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Stripe Invoice</div>
+          <div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">Request an invoice by email</div>
+        </div>
+        <span style="color:#BF8C8C;-webkit-text-fill-color:#BF8C8C;font-size:18px">&#8594;</span>
+      </a>
     </div>
   </div>
 
-  <!-- SAFETY SCREEN -->
+    <!-- SAFETY SCREEN -->
   <div id="safety-screen">
     <div class="safety-header">
       <div class="safety-header-title">Your safety comes first.</div>
