@@ -18,48 +18,56 @@
     :root{--bg:#423232;--card:#8A7272;--card-dark:#6B5555;--blush:#BF8C8C;--blush-lt:#D4AAAA;--text:#301212;--text-lt:#FCF2F2;--outline:#695151;--border:#7A6060;--safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px)}
     html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Fredoka',sans-serif;font-weight:300}
     #app{display:flex;flex-direction:column;height:100dvh;max-width:680px;margin:0 auto;padding-top:var(--safe-top);padding-bottom:var(--safe-bot);position:relative;overflow:hidden}
-    header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 10px;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0;gap:8px}
-    .wordmark{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;letter-spacing:0.12em;color:var(--blush);cursor:pointer;flex-shrink:0}
-    .header-right{display:flex;align-items:center;gap:6px}
-    .safety-btn{background:transparent;border:1px solid #C0392B;border-radius:20px;padding:4px 10px;font-family:'Fredoka',sans-serif;font-size:11px;color:#E8A09A;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
-    .lang-btn{background:transparent;border:1px solid var(--outline);border-radius:20px;padding:4px 10px;font-family:'Fredoka',sans-serif;font-size:11px;color:var(--blush-lt);cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
-    .header-tag{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--blush-lt);opacity:0.5}
+
+    /* HEADER */
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 10px;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0}
+    .wordmark{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;letter-spacing:0.12em;color:var(--blush);cursor:pointer}
+    .header-tag{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blush-lt);opacity:0.4}
+
+    /* TABS */
     .tab-bar{display:flex;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0}
-    .tab{flex:1;padding:10px 4px;font-family:'Fredoka',sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--blush-lt);opacity:0.45;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;-webkit-tap-highlight-color:transparent}
+    .tab{flex:1;padding:10px 2px;font-family:'Fredoka',sans-serif;font-size:10px;letter-spacing:0.04em;text-transform:uppercase;color:var(--blush-lt);opacity:0.45;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;-webkit-tap-highlight-color:transparent;line-height:1.3}
     .tab.active{color:var(--blush);opacity:1;border-bottom-color:var(--blush)}
+    .tab.ready-tab{color:var(--blush);opacity:0.8;border:1px solid var(--blush);border-radius:20px;margin:6px 4px;padding:6px 8px;border-bottom:1px solid var(--blush)}
+    .tab.ready-tab.active{background:var(--blush);color:var(--text);opacity:1}
+
+    /* SCREENS */
     .screen{display:none;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
     .screen.active{display:flex;flex-direction:column}
-    #screen-home{padding:36px 20px 48px;align-items:center;text-align:center}
-    .home-eyebrow{font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--blush-lt);opacity:0.6;margin-bottom:14px}
-    .home-headline{font-family:'Playfair Display',serif;font-size:clamp(34px,9vw,52px);font-weight:400;line-height:1.05;color:var(--blush);margin-bottom:18px}
+    .screen::-webkit-scrollbar{width:4px}
+    .screen::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+    /* HOME */
+    #screen-home{padding:40px 24px 32px;align-items:center;text-align:center}
+    .home-headline{font-family:'Playfair Display',serif;font-size:clamp(30px,8vw,48px);font-weight:400;line-height:1.1;color:var(--blush);margin-bottom:14px}
     .home-headline em{font-style:italic;color:var(--blush-lt)}
-    .home-pitch{font-size:15px;font-weight:300;color:var(--text-lt);line-height:1.65;max-width:400px;margin-bottom:28px;opacity:0.9}
-    .home-pitch strong{font-weight:500;color:var(--blush-lt)}
-    .divider{width:32px;height:1px;background:var(--blush);opacity:0.3;margin:0 auto 28px}
-    .three-things{width:100%;max-width:460px;margin-bottom:24px;display:flex;flex-direction:column}
-    .thing{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);text-align:left}
-    .thing:last-child{border-bottom:none}
-    .thing-num{font-family:'Playfair Display',serif;font-size:20px;color:var(--blush);opacity:0.5;flex-shrink:0;width:22px}
-    .thing-text{font-size:14px;font-weight:300;color:var(--text-lt);line-height:1.55}
-    .thing-text strong{font-weight:500;color:var(--blush-lt);display:block;margin-bottom:2px}
-    .price-line{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:var(--blush-lt);opacity:0.7;margin-bottom:28px}
-    .cta-btn{background:var(--blush);color:var(--text);border:none;border-radius:40px;padding:15px 36px;font-family:'Fredoka',sans-serif;font-size:16px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;margin-bottom:10px;-webkit-tap-highlight-color:transparent}
-    .cta-sub{font-size:12px;color:var(--blush-lt);opacity:0.5;margin-bottom:36px}
-    .devon-strip{width:100%;max-width:460px;border-top:1px solid var(--border);padding-top:24px;text-align:left}
-    .devon-strip-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-    .devon-avatar{width:40px;height:40px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--text);flex-shrink:0}
-    .devon-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:var(--blush-lt)}
-    .devon-title{font-size:10px;color:var(--text-lt);opacity:0.45;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px}
-    .devon-bio-text{font-size:13px;font-weight:300;color:var(--text-lt);line-height:1.7;opacity:0.75}
-    .devon-bio-text p+p{margin-top:10px}
-    .devon-sig{display:block;margin-top:10px;font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--blush);opacity:0.7}
+    .home-sub{font-size:15px;font-weight:300;color:var(--text-lt);line-height:1.65;opacity:0.85;margin-bottom:32px;max-width:400px}
+    .divider{width:32px;height:1px;background:var(--blush);opacity:0.3;margin:0 auto 32px}
+    .devon-letter{width:100%;max-width:500px;text-align:left;margin-bottom:32px}
+    .devon-letter-header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+    .devon-avatar{width:44px;height:44px;border-radius:50%;background:var(--blush);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--text);flex-shrink:0}
+    .devon-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--blush-lt)}
+    .devon-role{font-size:10px;color:var(--text-lt);opacity:0.4;letter-spacing:0.08em;text-transform:uppercase;margin-top:2px}
+    .devon-letter-body{font-size:14px;font-weight:300;color:var(--text-lt);line-height:1.8;opacity:0.82}
+    .devon-letter-body p{margin-bottom:14px}
+    .devon-letter-body p:last-child{margin-bottom:0}
+    .devon-sig{display:block;margin-top:16px;font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--blush);opacity:0.8}
+    .promises{width:100%;max-width:500px;margin-bottom:32px}
+    .promise{padding:18px 0;border-bottom:1px solid var(--border);text-align:left}
+    .promise:last-child{border-bottom:none}
+    .promise-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--blush-lt);margin-bottom:6px}
+    .promise-body{font-size:14px;font-weight:300;color:var(--text-lt);line-height:1.6;opacity:0.8}
+
+    /* CHAT */
     #screen-chat{flex-direction:column}
     #chat-messages{flex:1;overflow-y:auto;padding:0 20px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
-    .chat-welcome{padding:28px 0 16px;display:flex;flex-direction:column;align-items:center;text-align:center}
-    .chat-welcome-head{font-family:'Playfair Display',serif;font-size:20px;color:var(--blush);margin-bottom:6px}
-    .chat-welcome-sub{font-size:13px;font-weight:300;color:var(--text-lt);opacity:0.55;line-height:1.6;max-width:320px;margin-bottom:24px}
+    #chat-messages::-webkit-scrollbar{width:4px}
+    #chat-messages::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+    .chat-intro{padding:28px 0 20px;text-align:center}
+    .chat-intro-head{font-family:'Playfair Display',serif;font-size:20px;color:var(--blush);margin-bottom:8px}
+    .chat-intro-sub{font-size:13px;font-weight:300;color:var(--text-lt);opacity:0.55;line-height:1.6;max-width:320px;margin:0 auto 24px}
     .chips{display:flex;flex-direction:column;gap:8px;width:100%}
-    .chip{background:transparent;border:1px solid var(--outline);border-radius:40px;padding:11px 18px;font-family:'Fredoka',sans-serif;font-size:13px;font-weight:300;color:var(--text-lt);text-align:left;cursor:pointer;transition:all 0.2s;line-height:1.4;-webkit-tap-highlight-color:transparent}
+    .chip{background:transparent;border:1px solid var(--outline);border-radius:12px;padding:12px 16px;font-family:'Fredoka',sans-serif;font-size:13px;font-weight:300;color:var(--text-lt);text-align:left;cursor:pointer;transition:all 0.2s;line-height:1.4;-webkit-tap-highlight-color:transparent}
     .chip:hover,.chip:active{background:var(--card);border-color:var(--blush)}
     .messages-inner{padding:16px 0 12px;display:flex;flex-direction:column;gap:18px}
     .msg{display:flex;gap:10px;animation:fadeUp 0.3s ease both}
@@ -85,22 +93,61 @@
     .send-btn:disabled{background:var(--outline);cursor:default}
     .disclaimer{text-align:center;font-size:10px;font-family:'Fredoka',sans-serif;color:var(--blush-lt);opacity:0.35;letter-spacing:0.06em;margin-top:8px}
     #scroll-anchor{height:1px}
-    .intake-summary{background:var(--card-dark);border:1px solid var(--blush);border-radius:16px;padding:18px;margin:12px 0;color:var(--text-lt)}
-    .intake-summary-title{font-family:'Playfair Display',serif;font-size:17px;color:var(--blush);margin-bottom:12px}
-    .intake-row{margin-bottom:10px;font-size:13px;line-height:1.6}
-    .intake-label{font-weight:500;color:var(--blush-lt);display:block;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2px}
-    .intake-copy-note{font-size:11px;color:var(--blush-lt);opacity:0.6;text-align:center;margin-top:12px;font-style:italic;line-height:1.5}
-    #screen-info{padding:28px 20px 48px}
-    .info-section{margin-bottom:28px}
-    .info-label{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--blush-lt);opacity:0.5;margin-bottom:8px}
-    .info-heading{font-family:'Playfair Display',serif;font-size:22px;color:var(--blush);margin-bottom:10px;line-height:1.2}
-    .info-body{font-size:13.5px;font-weight:300;color:var(--text-lt);line-height:1.7;opacity:0.85}
-    .info-body p+p{margin-top:10px}
-    .info-divider{height:1px;background:var(--border);margin:24px 0}
-    .info-cta{display:block;background:var(--blush);color:var(--text);border:none;border-radius:40px;padding:14px 28px;font-family:'Fredoka',sans-serif;font-size:15px;font-weight:500;text-align:center;text-decoration:none;margin-top:8px;-webkit-tap-highlight-color:transparent}
-    .info-cta.outline{background:transparent;border:1px solid var(--outline);color:var(--blush-lt);margin-top:10px}
-    .confidential-note{background:var(--card-dark);border:1px solid var(--outline);border-radius:12px;padding:14px 16px;margin-top:14px;font-size:13px;font-weight:300;color:var(--text-lt);line-height:1.65;opacity:0.85}
-    .confidential-note strong{font-weight:500;color:var(--blush-lt);display:block;margin-bottom:4px}
+
+    /* WHAT IS DUN */
+    #screen-dun{padding:0;flex-direction:column}
+    .dun-subtabs{display:flex;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0}
+    .dun-subtab{flex:1;padding:12px 4px;font-family:'Fredoka',sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--blush-lt);opacity:0.45;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;-webkit-tap-highlight-color:transparent}
+    .dun-subtab.active{color:var(--blush);opacity:1;border-bottom-color:var(--blush)}
+    .dun-panel{display:none;overflow-y:auto;padding:28px 24px 48px;-webkit-overflow-scrolling:touch;flex:1}
+    .dun-panel.active{display:block}
+    .dun-heading{font-family:'Playfair Display',serif;font-size:26px;color:var(--blush);margin-bottom:10px;line-height:1.2}
+    .dun-subhead{font-size:14px;font-weight:300;color:var(--text-lt);opacity:0.75;line-height:1.65;margin-bottom:28px}
+    .service-group{margin-bottom:28px}
+    .service-group-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--blush-lt);margin-bottom:12px}
+    .service-list{display:flex;flex-direction:column;gap:8px}
+    .service-item{font-size:13.5px;font-weight:300;color:var(--text-lt);opacity:0.8;padding:10px 14px;background:var(--card-dark);border-radius:8px;border-left:2px solid var(--blush);line-height:1.4}
+    .dun-divider{height:1px;background:var(--border);margin:28px 0}
+    .biz-stat{background:var(--card-dark);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+    .biz-stat-title{font-family:'Playfair Display',serif;font-size:16px;color:var(--blush-lt);margin-bottom:4px}
+    .biz-stat-body{font-size:13px;font-weight:300;color:var(--text-lt);line-height:1.6;opacity:0.8}
+    .dun-tagline{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--blush);margin:24px 0;line-height:1.3}
+    .dun-cta{display:block;background:var(--blush);color:var(--text);border:none;border-radius:40px;padding:14px 28px;font-family:'Fredoka',sans-serif;font-size:15px;font-weight:500;text-align:center;text-decoration:none;margin-top:24px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+
+    /* I'M READY FORM */
+    #screen-ready{padding:28px 24px 48px}
+    .form-heading{font-family:'Playfair Display',serif;font-size:26px;color:var(--blush);margin-bottom:8px}
+    .form-subhead{font-size:14px;font-weight:300;color:var(--text-lt);opacity:0.75;line-height:1.65;margin-bottom:8px}
+    .form-disclaimer{font-size:12px;font-weight:300;color:var(--blush-lt);opacity:0.6;line-height:1.6;margin-bottom:28px;font-style:italic}
+    .form-section-title{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--blush-lt);opacity:0.6;margin-bottom:10px;margin-top:24px}
+    .form-field{margin-bottom:16px}
+    .form-label{font-size:12px;font-weight:400;color:var(--blush-lt);letter-spacing:0.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+    .form-label span{color:var(--blush);margin-left:3px}
+    .form-input{width:100%;background:var(--card-dark);border:1px solid var(--outline);border-radius:10px;padding:12px 14px;font-family:'Fredoka',sans-serif;font-size:15px;font-weight:300;color:var(--text-lt);outline:none;transition:border-color 0.2s;-webkit-appearance:none}
+    .form-input:focus{border-color:var(--blush)}
+    .form-input::placeholder{color:var(--blush-lt);opacity:0.35}
+    .form-textarea{width:100%;background:var(--card-dark);border:1px solid var(--outline);border-radius:10px;padding:12px 14px;font-family:'Fredoka',sans-serif;font-size:15px;font-weight:300;color:var(--text-lt);outline:none;resize:none;min-height:100px;transition:border-color 0.2s;-webkit-appearance:none}
+    .form-textarea:focus{border-color:var(--blush)}
+    .form-textarea::placeholder{color:var(--blush-lt);opacity:0.35}
+    .contact-note{font-size:12px;color:var(--blush-lt);opacity:0.55;margin-bottom:16px;line-height:1.5}
+    .form-submit{width:100%;background:var(--blush);color:var(--text);border:none;border-radius:40px;padding:16px;font-family:'Fredoka',sans-serif;font-size:16px;font-weight:500;cursor:pointer;margin-top:8px;-webkit-tap-highlight-color:transparent}
+    .form-submit:disabled{background:var(--outline);cursor:default}
+    .form-success{text-align:center;padding:32px 0}
+    .form-success-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--blush);margin-bottom:14px}
+    .form-success-body{font-size:14px;font-weight:300;color:var(--text-lt);line-height:1.8;opacity:0.85;margin-bottom:10px}
+    .form-success-sig{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--blush);opacity:0.8}
+    .form-error{font-size:12px;color:#E8A09A;margin-top:6px;display:none}
+
+    /* BOTTOM BAR */
+    .bottom-bar{flex-shrink:0;border-top:1px solid var(--border);padding:14px 20px 18px;background:var(--bg);display:flex;flex-direction:column;gap:12px}
+    .bottom-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+    .bottom-btn{background:transparent;border:1px solid var(--outline);border-radius:20px;padding:5px 12px;font-family:'Fredoka',sans-serif;font-size:11px;color:var(--blush-lt);cursor:pointer;-webkit-tap-highlight-color:transparent;text-decoration:none;display:inline-block}
+    .bottom-btn.safety{border-color:#C0392B;color:#E8A09A}
+    .social-icon{width:30px;height:30px;border-radius:50%;border:1px solid var(--outline);display:flex;align-items:center;justify-content:center;color:var(--blush-lt);text-decoration:none;-webkit-tap-highlight-color:transparent}
+    .bottom-contact{text-align:center;font-size:11px;font-weight:300;color:var(--blush-lt);opacity:0.45;line-height:1.9}
+    .bottom-legal{text-align:center;font-size:10px;color:var(--blush-lt);opacity:0.3;letter-spacing:0.06em}
+
+    /* SAFETY */
     #safety-screen{display:none;position:absolute;inset:0;background:#1A0A0A;z-index:100;flex-direction:column;padding-top:var(--safe-top)}
     #safety-screen.visible{display:flex}
     .safety-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 14px;border-bottom:1px solid #3A1A1A}
@@ -122,96 +169,102 @@
 </head>
 <body>
 <div id="app">
-  <div id="safety-screen">
-    <div class="safety-header">
-      <div class="safety-header-title" id="s-title">Your safety comes first.</div>
-      <button class="safety-close" onclick="closeSafety()">&#x2715;</button>
-    </div>
-    <div class="safety-body">
-      <div class="safety-top-line" id="s-top">Are you able to speak freely right now?</div>
-      <div class="safety-sub" id="s-sub">If there is any chance your device is being monitored, these resources are free, confidential, and available any time.</div>
-      <a class="safety-resource emergency" href="tel:911">
-        <div class="safety-resource-label" id="s-e-label">Emergency</div>
-        <div class="safety-resource-title">Call 911</div>
-        <div class="safety-resource-desc" id="s-e-desc">If you are in immediate danger, call now.</div>
+
+
+  <!-- PAYMENTS OVERLAY -->
+  <div id="payments-overlay">
+    <div class="payments-box">
+      <button class="payments-close" onclick="closePayments()">&#x2715;</button>
+      <div class="payments-title">Make a Payment</div>
+      <div class="payments-sub">Devon will send you an invoice with the amount due. Once you receive it, you can pay through any of the options below.</div>
+      <a class="payments-option" href="https://venmo.com/" target="_blank">
+        <div><div class="payments-option-name">Venmo</div><div class="payments-option-desc">@sheisdun</div></div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <div class="safety-divider-text" id="s-divider">or reach a trained advocate</div>
-      <a class="safety-resource" href="tel:18007997233">
-        <div class="safety-resource-label">National Domestic Violence Hotline</div>
-        <div class="safety-resource-title">1-800-799-7233</div>
-        <div class="safety-resource-desc" id="s-dv-desc">Call or text 24/7. Free and confidential.</div>
+      <a class="payments-option" href="https://cash.app/" target="_blank">
+        <div><div class="payments-option-name">Cash App</div><div class="payments-option-desc">$sheisdun</div></div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a class="safety-resource" href="https://www.thehotline.org/get-help/hotline-chat/" target="_blank">
-        <div class="safety-resource-label" id="s-chat-label">Prefer to chat?</div>
-        <div class="safety-resource-title">thehotline.org</div>
-        <div class="safety-resource-desc" id="s-chat-desc">Live chat if you cannot speak safely.</div>
+      <a class="payments-option" href="mailto:devonisdun@gmail.com?subject=Payment" target="_blank">
+        <div><div class="payments-option-name">Stripe Invoice</div><div class="payments-option-desc">Request an invoice by email</div></div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#BF8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a class="safety-resource" href="sms:741741&body=START">
-        <div class="safety-resource-label">Crisis Text Line</div>
-        <div class="safety-resource-title" id="s-text-title">Text HOME to 741741</div>
-        <div class="safety-resource-desc" id="s-text-desc">Free, 24/7 support by text.</div>
-      </a>
-      <div class="safety-note" id="s-note">Tap the X to leave this screen quickly. Your conversation is still here when you are ready.</div>
-      <button class="safety-continue" id="s-continue" onclick="closeSafety()">I am safe. Take me back.</button>
+
     </div>
   </div>
 
+  <!-- SAFETY SCREEN -->
+  <div id="safety-screen">
+    <div class="safety-header">
+      <div class="safety-header-title">Your safety comes first.</div>
+      <button class="safety-close" onclick="closeSafety()">&#x2715;</button>
+    </div>
+    <div class="safety-body">
+      <div class="safety-top-line">Are you able to speak freely right now?</div>
+      <div class="safety-sub">If there is any chance your device is being monitored, these resources are free, confidential, and available any time.</div>
+      <a class="safety-resource emergency" href="tel:911"><div class="safety-resource-label">Emergency</div><div class="safety-resource-title">Call 911</div><div class="safety-resource-desc">If you are in immediate danger, call now.</div></a>
+      <div class="safety-divider-text">or reach a trained advocate</div>
+      <a class="safety-resource" href="tel:18007997233"><div class="safety-resource-label">National Domestic Violence Hotline</div><div class="safety-resource-title">1-800-799-7233</div><div class="safety-resource-desc">Call or text 24/7. Free and confidential.</div></a>
+      <a class="safety-resource" href="https://www.thehotline.org/get-help/hotline-chat/" target="_blank"><div class="safety-resource-label">Prefer to chat?</div><div class="safety-resource-title">thehotline.org</div><div class="safety-resource-desc">Live chat if you cannot speak safely.</div></a>
+      <a class="safety-resource" href="sms:741741&body=START"><div class="safety-resource-label">Crisis Text Line</div><div class="safety-resource-title">Text HOME to 741741</div><div class="safety-resource-desc">Free, 24/7 support by text.</div></a>
+      <div class="safety-note">Tap the X to leave this screen quickly. Your conversation is still here when you are ready.</div>
+      <button class="safety-continue" onclick="closeSafety()">I am safe. Take me back.</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
   <header>
     <div class="wordmark" onclick="showTab('home')">DUN</div>
-    <div class="header-right">
-      <button class="safety-btn" id="h-safety" onclick="openSafety()">Are you safe?</button>
-      <button class="lang-btn" id="lang-toggle" onclick="toggleLang()">Español</button>
-      <div class="header-tag" id="h-tag">Not legal advice</div>
-    </div>
+    <div class="header-tag">Not legal advice</div>
   </header>
 
+  <!-- TABS -->
   <div class="tab-bar">
-    <button class="tab active" id="tab-home" onclick="showTab('home')" data-en="Home" data-es="Inicio">Home</button>
-    <button class="tab" id="tab-chat" onclick="showTab('chat')" data-en="Ask Devon" data-es="Pregunta a Devon">Ask Devon</button>
-    <button class="tab" id="tab-info" onclick="showTab('info')" data-en="How It Works" data-es="Cómo Funciona">How It Works</button>
+    <button class="tab active" id="tab-home" onclick="showTab('home')">Home</button>
+    <button class="tab" id="tab-chat" onclick="showTab('chat')">Ask Devon</button>
+    <button class="tab" id="tab-dun" onclick="showTab('dun')">What is DUN</button>
+    <button class="tab ready-tab" id="tab-ready" onclick="showTab('ready')">I'm Ready</button>
   </div>
 
   <!-- HOME -->
   <div class="screen active" id="screen-home">
-    <div class="home-eyebrow" id="h-eyebrow">You found the right place.</div>
-    <h1 class="home-headline" id="h-headline">You're here because<br/>you're <em>done.</em></h1>
-    <p class="home-pitch" id="h-pitch">Tell me what's going on in your own words.<br/><strong id="h-pitch-strong">I'll tell you exactly how I can help.</strong></p>
+    <h1 class="home-headline">You're here because you are<br/>ready to be <em>done.</em></h1>
+    <p class="home-sub">You focus on getting through this. DUN will handle the rest.</p>
     <div class="divider"></div>
-    <div class="three-things">
-      <div class="thing"><div class="thing-num">1</div><div class="thing-text"><strong id="t1-title">We listen. And we believe you.</strong><span id="t1-body">Every situation is different. You talk, I listen — no judgment, no time limit.</span></div></div>
-      <div class="thing"><div class="thing-num">2</div><div class="thing-text"><strong id="t2-title">We give you a plan.</strong><span id="t2-body">A detailed outline of exactly what you need, in what order, and why.</span></div></div>
-      <div class="thing"><div class="thing-num">3</div><div class="thing-text"><strong id="t3-title">We do the paperwork.</strong><span id="t3-body">Contract, deposit, and we prepare every document for you. You show up ready.</span></div></div>
-    </div>
-    
-    <button class="cta-btn" id="h-cta" onclick="startIntake()">I'm Ready</button>
-    <div class="cta-sub" id="h-cta-sub">No commitment. Just a conversation.</div>
-    <div class="devon-strip">
-      <div class="devon-strip-header">
+    <div class="devon-letter">
+      <div class="devon-letter-header">
         <div class="devon-avatar">D</div>
-        <div><div class="devon-name">Devon Dun</div><div class="devon-title" id="d-title">Founder, DUN</div></div>
+        <div><div class="devon-name">Devon Dun</div><div class="devon-role">Founder, DUN</div></div>
       </div>
-      <div class="devon-bio-text">
-        <p id="d-bio1">I built DUN from inside the system — seven years of court dates, documents, and filings. Every moment of confusion the process is designed to create, I have been there.</p>
-        <p id="d-bio2">I spent those years building something useful: the knowledge, the tools, and the relationships with attorneys and legal professionals who believe every woman deserves to walk into a courtroom prepared.</p>
-        <p id="d-bio3">I have been exactly where you are. I am still there right now. I am just sharing every tool I have found so you can be DUN a lot sooner than I am.</p>
+      <div class="devon-letter-body">
+        <p>I built DUN from inside the system. Seven years of court dates, documents, and filings. Every moment of confusion the process is designed to create, I have been there.</p>
+        <p>I spent those years building something useful: the knowledge, the tools, and the relationships with attorneys and legal professionals who believe every woman deserves to walk into a courtroom prepared.</p>
+        <p>I have been exactly where you are. A single mother, trying to keep up while providing for my children, exhausted by a system that was designed to protect me. That is why I built DUN. This should be effortless. And in the end, you can rest knowing that the outcome was the best possible.</p>
+        <p>Add DUN to your home screen and tap I'm Ready any time. I will be there.</p>
       </div>
       <span class="devon-sig">— Devon Dun</span>
     </div>
+    <div class="promises">
+      <div class="promise"><div class="promise-title">We listen. And we believe you.</div><div class="promise-body">Every situation is different. You talk, I listen. No judgment.</div></div>
+      <div class="promise"><div class="promise-title">We give you a plan.</div><div class="promise-body">A detailed outline of what you need, in what order, and why. Yours to keep whether you move forward with DUN or not.</div></div>
+      <div class="promise"><div class="promise-title">We do the hard stuff.</div><div class="promise-body">We answer questions and offer non-legal advice then we prepare every document for you. Hand it to your lawyer or file it yourself. We handle every document while you focus on your life.</div></div>
+      <div class="promise"><div class="promise-title">We don't leave your side.</div><div class="promise-body">With you in the palm of your hand from any device whenever you need us.</div></div>
+    </div>
   </div>
 
-  <!-- CHAT -->
+  <!-- ASK DEVON -->
   <div class="screen" id="screen-chat">
     <div id="chat-messages">
-      <div class="chat-welcome" id="chat-welcome">
-        <div class="chat-welcome-head" id="cw-head">Ask me anything.</div>
-        <div class="chat-welcome-sub" id="cw-sub">Divorce, custody, orders of protection, court process — nothing is off limits. Start anywhere.</div>
+      <div class="chat-intro" id="chat-intro">
+        <div class="chat-intro-head">Tell me what is going on.</div>
+        <div class="chat-intro-sub">I'll tell you how I can help. Nothing is off limits.</div>
         <div class="chips">
-          <button class="chip" onclick="sendSuggestion(this)" data-en="I don't even know where to start." data-es="Ni siquiera sé por dónde empezar.">I don't even know where to start.</button>
-          <button class="chip" onclick="sendSuggestion(this)" data-en="What does uncontested actually mean?" data-es="¿Qué significa realmente divorcio de mutuo acuerdo?">What does uncontested actually mean?</button>
-          <button class="chip" onclick="sendSuggestion(this)" data-en="He just served me papers. Now what?" data-es="Acabo de recibir los papeles. ¿Y ahora qué?">He just served me papers. Now what?</button>
-          <button class="chip" onclick="sendSuggestion(this)" data-en="I feel like I'm always the problem." data-es="Siento que siempre soy el problema.">I feel like I'm always the problem.</button>
-          <button class="chip" onclick="sendSuggestion(this)" data-en="I need to understand my custody options." data-es="Necesito entender mis opciones de custodia.">I need to understand my custody options.</button>
-          <button class="chip" onclick="sendSuggestion(this)" data-en="What is an order of protection?" data-es="¿Qué es una orden de protección?">What is an order of protection?</button>
+          <button class="chip" onclick="sendChip(this)">I'm ready to be divorced but I don't know where to start.</button>
+          <button class="chip" onclick="sendChip(this)">I think I need an order of protection but I'm not sure.</button>
+          <button class="chip" onclick="sendChip(this)">I just got served with papers. I have no idea what any of it means.</button>
+          <button class="chip" onclick="sendChip(this)">He's not paying child support. How do I file a violation?</button>
+          <button class="chip" onclick="sendChip(this)">What is the difference between a contested and uncontested divorce?</button>
+          <button class="chip" onclick="sendChip(this)">I believe I'm entitled to full custody but don't know if I could get it.</button>
         </div>
       </div>
       <div class="messages-inner" id="messages"></div>
@@ -219,342 +272,584 @@
     </div>
     <div id="input-area">
       <div class="input-wrap">
-        <textarea id="input" rows="1" placeholder="Ask anything..." onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+        <textarea id="input" rows="1" placeholder="Tell me what is going on..." onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
         <button class="send-btn" id="send-btn" onclick="send()">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 12V2M2 7l5-5 5 5" stroke="#301212" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
-      <div class="disclaimer" id="disclaimer">DUN is a document preparation service, not a law firm. Nothing here is legal advice.</div>
+      <div class="disclaimer">DUN is a document preparation service, not a law firm. Nothing here is legal advice.</div>
     </div>
   </div>
 
-  <!-- INFO -->
-  <div class="screen" id="screen-info">
-    <div class="info-section">
-      <div class="info-label" id="i1-label">What DUN does</div>
-      <div class="info-heading" id="i1-head">Stop worrying about whether you can afford the right support. Start making sure you're getting it.</div>
-      <div class="info-body"><p id="i1-p1">DUN prepares legal documents for women who are self-represented or working alongside an attorney. Divorce, legal separation, custody agreements, parenting plans, child support worksheets, orders of protection, and full court document organization.</p><p id="i1-p2">You do not need to know what any of that means yet. That is what the first conversation is for.</p></div>
+  <!-- WHAT IS DUN -->
+  <div class="screen" id="screen-dun">
+    <div class="dun-subtabs">
+      <button class="dun-subtab active" id="subtab-individual" onclick="showSubtab('individual')">For Individuals</button>
+      <button class="dun-subtab" id="subtab-business" onclick="showSubtab('business')">DUN for Business</button>
     </div>
-    <div class="info-divider"></div>
-    <div class="info-section">
-      <div class="info-label" id="i2-label">How it works</div>
-      <div class="info-heading" id="i2-head">Three steps. No surprises.</div>
-      <div class="info-body"><p id="i2-p1"><strong style="color:var(--blush-lt)">You tell me what's going on.</strong> In your own words. I read every word personally.</p><p id="i2-p2"><strong style="color:var(--blush-lt)">I send you a plan and a price.</strong> No commitment until you are ready.</p><p id="i2-p3"><strong style="color:var(--blush-lt)">We get to work.</strong> Contract, deposit, and we handle every document.</p></div>
+    <div class="dun-panel active" id="panel-individual">
+      <div class="dun-heading">What DUN prepares for you.</div>
+      <div class="dun-subhead">DUN supports women who need assistance with the paperwork necessary to show up prepared.</div>
+      <div class="service-group"><div class="service-group-title">Family Court</div><div class="service-list"><div class="service-item">Divorce petition and response</div><div class="service-item">Legal separation agreements</div><div class="service-item">Custody agreements and parenting plans</div><div class="service-item">Child support worksheets and modification requests</div><div class="service-item">Spousal support documentation</div><div class="service-item">Violation petitions</div><div class="service-item">Court document organization and filing checklists</div></div></div>
+      <div class="service-group"><div class="service-group-title">Safety and Protection</div><div class="service-list"><div class="service-item">Orders of protection</div><div class="service-item">Domestic violence safety planning documentation</div><div class="service-item">Restraining order preparation</div><div class="service-item">Emergency custody filings</div></div></div>
+      <div class="service-group"><div class="service-group-title">Immigration</div><div class="service-list"><div class="service-item">VAWA self-petition support documentation</div><div class="service-item">U-Visa documentation for crime victims</div><div class="service-item">Asylum application support</div><div class="service-item">Removal of conditions on residency</div><div class="service-item">DACA renewal documentation</div></div></div>
+      <div class="service-group"><div class="service-group-title">Civil Matters</div><div class="service-list"><div class="service-item">Small claims court preparation</div><div class="service-item">Landlord tenant disputes</div><div class="service-item">Harassment and stalking documentation</div><div class="service-item">Workplace discrimination filings</div><div class="service-item">Name change petitions</div><div class="service-item">Guardianship documentation</div><div class="service-item">Notary and affidavit preparation</div></div></div>
+      <button class="dun-cta" onclick="showTab('ready')">I'm Ready. Let's Get Started.</button>
     </div>
-    <div class="info-divider"></div>
-    <div class="info-section">
-      <div class="info-label" id="i3-label">What it costs</div>
-      <div class="info-heading" id="i3-head">Most cases average $500 to $1,000.</div>
-      <div class="info-body"><p id="i3-p1">You will know the full cost before you commit to anything. If cost is a concern, tell me. We will figure it out.</p></div>
+    <div class="dun-panel" id="panel-business">
+      <div class="dun-heading">DUN for Business</div>
+      <div class="dun-subhead">This is one of the most difficult things your clients will go through. We know it is difficult for you and your staff too.</div>
+      <div class="dun-tagline">DUN doesn't just support women. We support the businesses that support women.</div>
+      <div class="dun-divider"></div>
+      <div class="service-group"><div class="service-group-title">Who we work with</div><div class="service-list"><div class="service-item">Law firms and solo practitioners</div><div class="service-item">Domestic violence organizations and shelters</div><div class="service-item">Nonprofit legal aid organizations</div><div class="service-item">Courts and judicial offices</div><div class="service-item">Social service agencies</div><div class="service-item">Corporate HR and employee assistance programs</div><div class="service-item">Hospitals and healthcare systems</div><div class="service-item">Insurance companies</div></div></div>
+      <div class="dun-divider"></div>
+      <div class="biz-stat"><div class="biz-stat-title">Reduce staff overhead</div><div class="biz-stat-body">Document preparation is time consuming and expensive. DUN handles it so your team can focus on what only they can do.</div></div>
+      <div class="biz-stat"><div class="biz-stat-title">Respond to clients faster</div><div class="biz-stat-body">DUN prepares documents in days, not weeks. Your clients move forward. Your case load moves forward.</div></div>
+      <div class="biz-stat"><div class="biz-stat-title">Real-time document delivery</div><div class="biz-stat-body">Documents go directly to clients through the DUN platform. In urgent situations, speed matters.</div></div>
+      <div class="biz-stat"><div class="biz-stat-title">White label and partnership options</div><div class="biz-stat-body">DUN can operate under your brand. Your clients get the same powerful platform, your organization gets the credit.</div></div>
+      <div class="biz-stat"><div class="biz-stat-title">Multilingual support</div><div class="biz-stat-body">DUN operates in English and Spanish, with additional languages in development.</div></div>
+      <div class="dun-divider"></div>
+
+      <div id="biz-form-container">
+        <p style="font-size:15px;font-weight:300;color:var(--text-lt);line-height:1.7;opacity:0.85;margin-bottom:6px">Tell us about your organization.</p>
+        <p style="font-size:12px;font-weight:300;color:var(--blush-lt);opacity:0.6;line-height:1.6;margin-bottom:24px;font-style:italic">Every response is read personally. We will come back to you with something specific, not a brochure.</p>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-name">Your name <span>*</span></label>
+          <input class="form-input" id="bf-name" type="text" placeholder="First and last name" />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-title">Your title</label>
+          <input class="form-input" id="bf-title" type="text" placeholder="e.g. Executive Director, Managing Partner" />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-org">Organization name <span>*</span></label>
+          <input class="form-input" id="bf-org" type="text" placeholder="Your organization" />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-type">Type of organization <span>*</span></label>
+          <select class="form-input" id="bf-type" style="cursor:pointer">
+            <option value="" disabled selected>Select one</option>
+            <option>Law firm or solo practitioner</option>
+            <option>Domestic violence organization or shelter</option>
+            <option>Nonprofit legal aid organization</option>
+            <option>Court or judicial office</option>
+            <option>Social service agency</option>
+            <option>Corporate HR or employee assistance program</option>
+            <option>Hospital or healthcare system</option>
+            <option>Insurance company</option>
+            <option>Government agency</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-staff">Number of staff members</label>
+          <select class="form-input" id="bf-staff" style="cursor:pointer">
+            <option value="" disabled selected>Select a range</option>
+            <option>1 to 5</option>
+            <option>6 to 25</option>
+            <option>26 to 100</option>
+            <option>101 to 500</option>
+            <option>500 or more</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-clients">Clients or cases served per year</label>
+          <select class="form-input" id="bf-clients" style="cursor:pointer">
+            <option value="" disabled selected>Select a range</option>
+            <option>Under 50</option>
+            <option>50 to 250</option>
+            <option>251 to 1,000</option>
+            <option>1,001 to 5,000</option>
+            <option>More than 5,000</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-current">How are you currently handling document preparation for clients?</label>
+          <textarea class="form-textarea" id="bf-current" placeholder="e.g. in-house staff, outside attorneys, clients handle it themselves, not at all" style="min-height:80px"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-pain">What is your biggest pain point right now when it comes to supporting clients through legal processes? <span>*</span></label>
+          <textarea class="form-textarea" id="bf-pain" placeholder="Be as specific as you can. This is where we will focus our response."></textarea>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-impact">What would it mean for your organization if document preparation was no longer a bottleneck?</label>
+          <textarea class="form-textarea" id="bf-impact" placeholder="Think about time, cost, staff capacity, client outcomes..." style="min-height:80px"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-budget">Do you have a budget allocated for legal technology or document services?</label>
+          <select class="form-input" id="bf-budget" style="cursor:pointer">
+            <option value="" disabled selected>Select one</option>
+            <option>Yes, budget is confirmed</option>
+            <option>Yes, but it needs approval</option>
+            <option>No budget yet but we are exploring</option>
+            <option>We rely on grants or funding</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-timeline">How soon are you looking to implement a solution?</label>
+          <select class="form-input" id="bf-timeline" style="cursor:pointer">
+            <option value="" disabled selected>Select one</option>
+            <option>Immediately</option>
+            <option>Within 3 months</option>
+            <option>Within 6 months</option>
+            <option>Exploring for next year</option>
+            <option>Just researching for now</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-interest">What interests you most about DUN? <span>*</span></label>
+          <textarea class="form-textarea" id="bf-interest" placeholder="e.g. white label, staff support, client-facing platform, bilingual access, partnership..." style="min-height:80px"></textarea>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-email">Email address <span>*</span></label>
+          <input class="form-input" id="bf-email" type="email" placeholder="Best email to reach you" />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="bf-phone">Phone number</label>
+          <input class="form-input" id="bf-phone" type="tel" placeholder="Optional" />
+        </div>
+
+        <button class="dun-cta" id="biz-submit-btn" onclick="submitBizForm()" style="margin-top:16px;border:none;cursor:pointer">Send to Devon</button>
+      </div>
+
+      <div id="biz-success" class="form-success" style="display:none">
+        <div class="form-success-title">We will be in touch.</div>
+        <div class="form-success-body">Devon reads every business inquiry personally. You will hear back within 24 hours with something specific to your organization — not a brochure, not a template.<br/><br/>In the meantime, feel free to email directly at devonisdun@gmail.com.</div>
+        <div class="form-success-sig">— Devon Dun</div>
+      </div>
     </div>
-    <div class="info-divider"></div>
-    <div class="info-section">
-      <div class="info-label" id="i4-label">Confidentiality</div>
-      <div class="info-heading" id="i4-head">Everything you share comes directly to me.</div>
-      <div class="info-body"><p id="i4-p1">Every response is confidential and handled personally. If you are not sure whether it is safe to communicate openly on your device, just add this to your message: <em style="color:var(--blush-lt)">"I could also use some help with groceries this week."</em> I will know what it means.</p></div>
-      <div class="confidential-note"><strong id="cn-title">Not sure if it's safe?</strong><span id="cn-body">Use the phrase above and I will respond with a safer way to connect.</span></div>
-    </div>
-    <div class="info-divider"></div>
-    <button class="info-cta" id="i-cta" onclick="startIntake()">I'm Ready — Let's Talk</button>
-    <a class="info-cta outline" id="i-email" href="mailto:devonisdun@gmail.com">Email Devon Directly</a>
   </div>
+
+  <!-- I'M READY FORM -->
+  <div class="screen" id="screen-ready">
+    <div id="form-container">
+      <div class="form-heading">Let's get started.</div>
+      <div class="form-subhead">Tell us a little about your situation and how to reach you. Devon reads every submission personally and will respond within 24 hours.</div>
+      <div class="form-disclaimer">Feel free to fill this out using a different name or any contact information that feels safe. We just need a way to reach you.</div>
+
+      <div class="form-section-title">About you</div>
+
+      <div class="form-field">
+        <label class="form-label" for="f-name">Name <span>*</span></label>
+        <input class="form-input" id="f-name" type="text" placeholder="Any name you'd like us to use" required />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="f-state">State and County <span>*</span></label>
+        <input class="form-input" id="f-state" type="text" placeholder="e.g. New York, Kings County" required />
+      </div>
+
+      <div class="form-section-title">How to reach you</div>
+      <p class="contact-note">Please provide at least one way to contact you. Use whatever feels safest.</p>
+
+      <div class="form-field">
+        <label class="form-label" for="f-email">Email</label>
+        <input class="form-input" id="f-email" type="email" placeholder="Your email address" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="f-phone">Phone number</label>
+        <input class="form-input" id="f-phone" type="tel" placeholder="Your phone number" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="f-instagram">Instagram</label>
+        <input class="form-input" id="f-instagram" type="text" placeholder="@yourhandle" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="f-whatsapp">WhatsApp</label>
+        <input class="form-input" id="f-whatsapp" type="tel" placeholder="WhatsApp number" />
+      </div>
+
+      <div id="contact-error" class="form-error">Please provide at least one way to contact you.</div>
+
+      <div class="form-section-title">Your situation</div>
+
+      <div class="form-field">
+        <label class="form-label" for="f-situation">Tell me what is going on <span>*</span></label>
+        <textarea class="form-textarea" id="f-situation" placeholder="You don't have to have it all figured out. Just give me the basics." required></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="f-copy">Send me a copy of this</label>
+        <input class="form-input" id="f-copy" type="email" placeholder="Email address for your copy (optional)" />
+      </div>
+
+      <button class="form-submit" id="form-submit-btn" onclick="submitForm()">Send to Devon</button>
+    </div>
+
+    <div id="form-success" class="form-success" style="display:none">
+      <div class="form-success-title">You did it.</div>
+      <div class="form-success-body">Take a breath. Your information is safe and everything you shared is completely confidential.<br/><br/>You will hear from Devon personally within 24 hours.<br/><br/>Add DUN to your home screen so we can stay in touch easily. Tap the share icon at the bottom of your browser and select Add to Home Screen.</div>
+      <div class="form-success-sig">— Devon Dun</div>
+    </div>
+  </div>
+
+
+  <!-- SPANISH SCREEN -->
+  <div class="screen" id="screen-spanish">
+    <h1 class="spanish-hero">Estás aquí porque estás<br/>lista para <em>terminar.</em></h1>
+    <p class="spanish-sub">Tú te enfocas en salir adelante. DUN se encarga del resto.<br/><br/>DUN prepara documentos legales para mujeres que necesitan apoyo con los trámites para presentarse preparadas ante la corte. Leemos cada solicitud personalmente y respondemos en menos de 24 horas.</p>
+
+    <div class="spanish-divider"></div>
+
+    <div class="spanish-section-title">Lo que DUN prepara para ti</div>
+
+    <div class="spanish-service">Petición de divorcio y respuesta</div>
+    <div class="spanish-service">Acuerdos de separación legal</div>
+    <div class="spanish-service">Acuerdos de custodia y planes de crianza</div>
+    <div class="spanish-service">Hojas de cálculo de manutención infantil</div>
+    <div class="spanish-service">Órdenes de protección</div>
+    <div class="spanish-service">Documentación de violencia doméstica</div>
+    <div class="spanish-service">Documentación de VAWA y Visa U</div>
+    <div class="spanish-service">Apoyo para solicitudes de asilo</div>
+    <div class="spanish-service">Renovación de DACA</div>
+    <div class="spanish-service">Peticiones de cambio de nombre</div>
+    <div class="spanish-service">Organización de documentos judiciales</div>
+
+    <div class="spanish-divider"></div>
+
+    <div id="spanish-form-container">
+      <div class="spanish-form-heading">Cuéntanos tu situación.</div>
+      <p class="spanish-sub" style="margin-bottom:8px">Devon lee cada solicitud personalmente y te responderá en menos de 24 horas.</p>
+      <p class="spanish-form-note">Puedes usar cualquier nombre o información de contacto que se sienta segura. Solo necesitamos una forma de comunicarnos contigo.</p>
+
+      <div class="form-field">
+        <label class="form-label" for="sf-name">Nombre <span>*</span></label>
+        <input class="form-input" id="sf-name" type="text" placeholder="Cualquier nombre que prefieras" required />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="sf-state">Estado y condado <span>*</span></label>
+        <input class="form-input" id="sf-state" type="text" placeholder="ej. New York, Kings County" required />
+      </div>
+
+      <div class="form-field" style="margin-top:20px">
+        <label class="form-label">Cómo contactarte</label>
+        <p class="spanish-form-note" style="margin-bottom:12px">Por favor proporciona al menos una forma de contacto que se sienta segura.</p>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="sf-email">Correo electrónico</label>
+        <input class="form-input" id="sf-email" type="email" placeholder="Tu correo electrónico" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="sf-phone">Número de teléfono</label>
+        <input class="form-input" id="sf-phone" type="tel" placeholder="Tu número de teléfono" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="sf-instagram">Instagram</label>
+        <input class="form-input" id="sf-instagram" type="text" placeholder="@tuusuario" />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="sf-whatsapp">WhatsApp</label>
+        <input class="form-input" id="sf-whatsapp" type="tel" placeholder="Número de WhatsApp" />
+      </div>
+
+      <div id="spanish-contact-error" class="form-error">Por favor proporciona al menos una forma de contacto.</div>
+
+      <div class="form-field" style="margin-top:20px">
+        <label class="form-label" for="sf-situation">Cuéntame qué está pasando <span>*</span></label>
+        <textarea class="form-textarea" id="sf-situation" placeholder="No tienes que tenerlo todo claro. Solo dime lo básico."></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="sf-copy">Envíame una copia</label>
+        <input class="form-input" id="sf-copy" type="email" placeholder="Correo para tu copia (opcional)" />
+      </div>
+
+      <button class="form-submit" id="spanish-submit-btn" onclick="submitSpanishForm()">Enviar a Devon</button>
+    </div>
+
+    <div id="spanish-success" class="form-success" style="display:none">
+      <div class="form-success-title">Lo lograste.</div>
+      <div class="form-success-body">Respira. Tu información está segura y todo lo que compartiste es completamente confidencial.<br/><br/>Escucharás de Devon personalmente dentro de las próximas 24 horas.<br/><br/>Agrega DUN a tu pantalla de inicio para que podamos mantenernos en contacto fácilmente. Toca el ícono de compartir en tu navegador y selecciona Agregar a pantalla de inicio.</div>
+      <div class="form-success-sig">— Devon Dun</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar">
+    <div class="bottom-row">
+      <button class="bottom-btn safety" onclick="openSafety()">Are you safe?</button>
+      <button class="bottom-btn" id="lang-toggle" onclick="openSpanish()">Español</button>
+      <button class="bottom-btn" onclick="openPayments()">Payments</button>
+    </div>
+    <div class="bottom-row">
+      <a class="social-icon" href="https://instagram.com/sheisdun" target="_blank" aria-label="Instagram">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a class="social-icon" href="https://tiktok.com/@sheisdun" target="_blank" aria-label="TikTok">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+      </a>
+    </div>
+    <div class="bottom-contact">
+      <a href="mailto:devonisdun@gmail.com" style="color:var(--blush-lt);text-decoration:none">devonisdun@gmail.com</a><br/>
+      167 Madison Avenue, Suite 205 No. 1211, New York, NY 10016
+    </div>
+    <div class="bottom-legal">&#169; 2026 DUN&#8482;. All rights reserved.</div>
+  </div>
+
 </div>
-
 <script>
 const FORMSPREE = 'https://formspree.io/f/xkokovoy';
-const DEVON_EMAIL = 'devonisdun@gmail.com';
-
 let messages = [], loading = false, lang = 'en';
-let intakeMode = false, intakeStep = 0, intakeData = {};
 
-const INTAKE_STEPS_EN = [
-  "Hi, I'm Devon. I'm glad you're here.\n\nLet's start simple — what's your first name? You can use any name you'd like.",
-  "Thank you. So what's going on? You don't have to have it figured out. Just give me the basics — whatever feels most pressing right now.",
-  "Got it. On a scale of 1 to 10, how urgent is your situation right now? 1 means you're figuring things out, 10 means you need help today.",
-  "I hear you. What kind of support are you looking for? Are you dealing with divorce, custody, an order of protection, child support — or something else entirely?",
-  "What's the best way to reach you, and is it safe to contact you on this device? You can share an email, a phone number, or both.",
-  "Last one — would you like me to send you a copy of this summary? If yes, drop your email here and I'll send it right over."
-];
+const SYSTEM_EN = `You are Devon Dun, the founder of DUN. A legal document preparation service built exclusively for women navigating divorce, custody, family court, domestic violence, orders of protection, immigration, and civil family actions.
 
-const INTAKE_STEPS_ES = [
-  "Hola, soy Devon. Me alegra que estés aquí.\n\n¿Con qué nombre te llamas? Puedes usar cualquier nombre que prefieras.",
-  "Gracias. ¿Qué está pasando? No tienes que tener todo claro. Solo dime lo básico — lo que más te preocupa ahora mismo.",
-  "Entendido. En una escala del 1 al 10, ¿qué tan urgente es tu situación? 1 significa que estás evaluando opciones, 10 significa que necesitas ayuda hoy.",
-  "Te escucho. ¿Qué tipo de apoyo buscas? ¿Es sobre divorcio, custodia, una orden de protección, manutención — o algo más?",
-  "¿Cuál es la mejor manera de contactarte, y es seguro hacerlo en este dispositivo? Puedes compartir un correo electrónico, un número de teléfono, o ambos.",
-  "Última pregunta — ¿quieres que te envíe una copia de este resumen? Si es así, escribe tu correo aquí y te lo mando enseguida."
-];
+Warm, real, direct. You have been through this yourself. Like talking to a brilliant friend who has been there. Never frame the woman as a victim. She is capable.
 
-const SYSTEM_EN = `You are Devon Dun, the founder of DUN — a legal document preparation service built exclusively for women navigating divorce, custody, family court, domestic violence, orders of protection, and civil family actions.
+No bullet points. No emoji. No dashes. End every response with: — Devon
 
-You speak as Devon Dun. Warm, real, direct. You have been through this yourself. Built DUN because you know what it feels like to be inside a legal process with no roadmap and no one in your corner.
+SAFETY: If a woman indicates immediate danger, encourage her to call 911 or 1-800-799-7233.
 
-VOICE: Warm, confident, a little irreverent. Never heavy, never clinical. Feel like talking to a brilliant friend who has been through it. Never frame the woman as a victim. She is capable. She is navigating a system designed to be confusing.
+PRICING: Never quote a specific price. Every client gets a custom proposal. If cost is a concern tell her DUN offers payment plans and works with every client to find a path forward.
 
-FORMATTING: Plain sentences and short paragraphs. No bullet points. No emoji. No lists. End every response with: — Devon
+GETTING STARTED: When she is ready to move forward, encourage her to tap the I'm Ready tab at the top of the screen.
 
-SAFETY: If a woman indicates she is in immediate danger, encourage her to call 911 or 1-800-799-7233, or tap "Are you safe?" at the top of the screen.
+SCOPE: Divorce, custody, orders of protection, child support, immigration, civil matters, domestic violence. Gently redirect anything outside this.
 
-CONFIDENTIALITY SIGNAL: If a woman says anything about "groceries," respond warmly and casually and direct her to email devonisdun@gmail.com from whatever device feels safest.
+DISCLAIMER: DUN is a document preparation service. Devon is not an attorney. Nothing here is legal advice. Say this when it matters, not as a deflection.`;
 
-PRICING: Never quote a specific price. Every client gets a custom proposal after the first conversation. Cost will never be the reason she cannot move forward.
+const SYSTEM_ES = `Eres Devon Dun, la fundadora de DUN. Cálida, real, directa. Has pasado por esto tú misma.
 
-SCOPE: Family court matters only. Gently redirect anything outside this.
+Sin viñetas. Sin emojis. Sin guiones. Termina cada respuesta con: — Devon
 
-DISCLAIMER: DUN is a document preparation service. Devon is not an attorney. Nothing here is legal advice.`;
+PRECIO: Nunca menciones un precio específico. DUN ofrece planes de pago.
 
-const SYSTEM_ES = `Eres Devon Dun, la fundadora de DUN — un servicio de preparación de documentos legales creado exclusivamente para mujeres que enfrentan divorcio, custodia, tribunal de familia, violencia doméstica, órdenes de protección y acciones civiles de familia.
+PARA COMENZAR: Cuando esté lista, anímala a tocar la pestaña Estoy Lista en la parte superior.
 
-Hablas como Devon Dun. Cálida, real, directa. Has pasado por esto tú misma. Construiste DUN porque sabes lo que se siente estar dentro de un proceso legal sin orientación y sin nadie de tu lado.
+ALCANCE: Divorcio, custodia, órdenes de protección, manutención, inmigración, asuntos civiles.`;
 
-VOZ: Cálida, segura, un poco irreverente. Nunca pesada, nunca clínica. Como hablar con una amiga brillante que ya lo ha vivido. Nunca trates a la mujer como víctima. Es capaz. Está navegando un sistema diseñado para confundir.
+function openSafety(){ document.getElementById('safety-screen').classList.add('visible'); }
+function closeSafety(){ document.getElementById('safety-screen').classList.remove('visible'); }
 
-FORMATO: Oraciones simples y párrafos cortos. Sin viñetas. Sin emojis. Sin listas. Termina cada respuesta con: — Devon
-
-SEGURIDAD: Si una mujer indica que está en peligro inmediato, anímala a llamar al 911 o al 1-800-799-7233.
-
-PRECIO: Nunca menciones un precio específico. Cada cliente recibe una propuesta personalizada después de la primera conversación.
-
-ALCANCE: Solo asuntos de tribunal de familia. Redirige con amabilidad cualquier otro tema.
-
-DESCARGO: DUN es un servicio de preparación de documentos. Devon no es abogada. Nada aquí constituye asesoramiento legal.`;
-
-const TRANSLATIONS = {
-  en: {
-    safety: 'Are you safe?', langBtn: 'Español', tag: 'Not legal advice',
-    eyebrow: 'You found the right place.', cta: "I'm Ready", ctaSub: 'No commitment. Just a conversation.',
-    price: '',
-    cwHead: 'Ask me anything.', cwSub: 'Divorce, custody, orders of protection, court process — nothing is off limits.',
-    placeholder: 'Ask anything...', disclaimer: 'DUN is a document preparation service, not a law firm. Nothing here is legal advice.',
-    iCta: "I'm Ready — Let's Talk", iEmail: 'Email Devon Directly',
-    summaryTitle: 'Your DUN Intake Summary', screenshotNote: 'Screenshot this for your records. Devon will be in touch within 24 hours.',
-    sendCopy: "Would you like me to send you a copy of this? Drop your email or phone number and I'll get it to you right away.",
-    closing: "Do you see how easy that was?\n\nTake a breath. Your information is safe and everything you shared is completely confidential.\n\nYou will hear from Devon personally within 24 hours.\n\nOne more thing — you can add DUN directly to your home screen so we can stay in touch easily. Tap the share icon at the bottom of your browser and select \"Add to Home Screen.\"\n\n— Devon"
-  },
-  es: {
-    safety: '¿Estás segura?', langBtn: 'English', tag: 'No es asesoramiento legal',
-    eyebrow: 'Encontraste el lugar correcto.', cta: 'Estoy Lista', ctaSub: 'Sin compromiso. Solo una conversación.',
-    price: '',
-    cwHead: 'Pregúntame lo que sea.', cwSub: 'Divorcio, custodia, órdenes de protección — nada está fuera de límites.',
-    placeholder: 'Pregunta lo que sea...', disclaimer: 'DUN es un servicio de preparación de documentos, no un bufete de abogados.',
-    iCta: 'Estoy Lista — Hablemos', iEmail: 'Enviar correo a Devon',
-    summaryTitle: 'Tu Resumen de Intake con DUN', screenshotNote: 'Toma una captura de pantalla para tus registros. Devon se pondrá en contacto en 24 horas.',
-    sendCopy: '¿Quieres que te envíe una copia? Escribe tu correo o número de teléfono.',
-    closing: "¿Ves qué fácil fue?\n\nRespira. Tu información está segura y todo lo que compartiste es completamente confidencial.\n\nEscucharás de Devon personalmente dentro de las próximas 24 horas.\n\nUna cosa más — puedes agregar DUN directamente a tu pantalla de inicio. Toca el ícono de compartir en tu navegador y selecciona \"Agregar a pantalla de inicio.\"\n\n— Devon"
-  }
-};
-
-function t(key) { return TRANSLATIONS[lang][key] || TRANSLATIONS.en[key]; }
-
-function applyLang() {
-  document.getElementById('h-safety').textContent = t('safety');
-  document.getElementById('lang-toggle').textContent = t('langBtn');
-  document.getElementById('h-tag').textContent = t('tag');
-  document.getElementById('h-eyebrow').textContent = t('eyebrow');
-  document.getElementById('h-cta').textContent = t('cta');
-  document.getElementById('h-cta-sub').textContent = t('ctaSub');
-  document.getElementById('h-price').textContent = t('price');
-  document.getElementById('cw-head').textContent = t('cwHead');
-  document.getElementById('cw-sub').textContent = t('cwSub');
-  document.getElementById('input').placeholder = t('placeholder');
-  document.getElementById('disclaimer').textContent = t('disclaimer');
-  document.getElementById('i-cta').textContent = t('iCta');
-  document.getElementById('i-email').textContent = t('iEmail');
-  document.querySelectorAll('.chip').forEach(c => { c.textContent = c.getAttribute('data-' + lang) || c.textContent; });
-  document.querySelectorAll('.tab').forEach(t2 => { t2.textContent = t2.getAttribute('data-' + lang) || t2.textContent; });
+function showTab(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('screen-'+n).classList.add('active');
+  document.getElementById('tab-'+n).classList.add('active');
 }
 
-function toggleLang() {
-  lang = lang === 'en' ? 'es' : 'en';
-  applyLang();
+function showSubtab(n){
+  document.querySelectorAll('.dun-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.dun-subtab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+n).classList.add('active');
+  document.getElementById('subtab-'+n).classList.add('active');
 }
 
-function openSafety() { document.getElementById('safety-screen').classList.add('visible'); }
-function closeSafety() { document.getElementById('safety-screen').classList.remove('visible'); }
-
-function showTab(name) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t2 => t2.classList.remove('active'));
-  document.getElementById('screen-' + name).classList.add('active');
-  document.getElementById('tab-' + name).classList.add('active');
+function toggleLang(){
+  lang = lang==='en'?'es':'en';
+  document.getElementById('lang-toggle').textContent = lang==='en'?'Español':'English';
 }
 
-function startIntake() {
-  showTab('chat');
-  intakeMode = true;
-  intakeStep = 0;
-  intakeData = {};
-  messages = [];
-  const cw = document.getElementById('chat-welcome');
-  if (cw) cw.style.display = 'none';
-  const steps = lang === 'es' ? INTAKE_STEPS_ES : INTAKE_STEPS_EN;
-  setTimeout(() => appendMessage('assistant', steps[0]), 300);
+function openPayments(){
+  document.getElementById('payments-overlay').style.display='flex';
+}
+function closePayments(){
+  document.getElementById('payments-overlay').style.display='none';
 }
 
-function autoResize(el) { el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight, 130) + 'px'; }
-function handleKey(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); } }
-function sendSuggestion(btn) { intakeMode = false; send(btn.getAttribute('data-' + lang) || btn.textContent.trim()); }
-function scrollToBottom() { document.getElementById('scroll-anchor').scrollIntoView({ behavior: 'smooth' }); }
+async function submitForm(){
+  const name = document.getElementById('f-name').value.trim();
+  const state = document.getElementById('f-state').value.trim();
+  const situation = document.getElementById('f-situation').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const instagram = document.getElementById('f-instagram').value.trim();
+  const whatsapp = document.getElementById('f-whatsapp').value.trim();
+  const copyEmail = document.getElementById('f-copy').value.trim();
 
-function appendMessage(role, content) {
-  const container = document.getElementById('messages');
-  const div = document.createElement('div');
-  div.className = 'msg ' + role;
-  const avatar = document.createElement('div');
-  avatar.className = 'avatar ' + (role === 'assistant' ? 'dun' : 'you');
-  avatar.textContent = role === 'assistant' ? 'D' : (lang === 'es' ? 'TÚ' : 'YOU');
-  const bubble = document.createElement('div');
-  bubble.className = 'bubble';
-  if (role === 'assistant') {
-    const clean = content.replace(/[\u{1F300}-\u{1FAFF}]|[\u2600-\u27FF]/gu, '').trim();
-    bubble.innerHTML = clean.replace(/(—\s*Devon\s*)$/m, '<span class="signature">— Devon</span>').replace(/\n/g, '<br/>');
-  } else {
-    bubble.innerHTML = content.replace(/\n/g, '<br/>');
-  }
-  div.appendChild(avatar);
-  div.appendChild(bubble);
-  container.appendChild(div);
-  scrollToBottom();
-}
+  const contactError = document.getElementById('contact-error');
 
-function showIntakeSummary() {
-  const container = document.getElementById('messages');
-  const div = document.createElement('div');
-  div.className = 'intake-summary';
-  const fields = lang === 'es'
-    ? [['Nombre','name'],['Situación','situation'],['Urgencia','urgency'],['Tipo de apoyo','type'],['Contacto','contact']]
-    : [['Name','name'],['Situation','situation'],['Urgency','urgency'],['Type of support','type'],['Contact','contact']];
-  let html = '<div class="intake-summary-title">' + t('summaryTitle') + '</div>';
-  fields.forEach(([label, key]) => {
-    if (intakeData[key]) {
-      html += '<div class="intake-row"><span class="intake-label">' + label + '</span>' + intakeData[key] + '</div>';
-    }
-  });
-  html += '<div class="intake-copy-note">' + t('screenshotNote') + '</div>';
-  div.innerHTML = html;
-  container.appendChild(div);
-  scrollToBottom();
-  submitToFormspree();
-}
+  if(!name || !state || !situation){ alert('Please fill in your name, state and county, and tell us what is going on.'); return; }
+  if(!email && !phone && !instagram && !whatsapp){ contactError.style.display='block'; return; }
+  contactError.style.display='none';
 
-async function submitToFormspree() {
-  try {
+  const btn = document.getElementById('form-submit-btn');
+  btn.disabled=true; btn.textContent='Sending...';
+
+  try{
     await fetch(FORMSPREE, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify({
-        _subject: 'New DUN Intake — ' + (intakeData.name || 'Unknown'),
-        name: intakeData.name || '',
-        situation: intakeData.situation || '',
-        urgency: intakeData.urgency || '',
-        type: intakeData.type || '',
-        contact: intakeData.contact || '',
-        language: lang,
-        _replyto: intakeData.copyEmail || DEVON_EMAIL
+        _subject: 'New DUN Intake — ' + name,
+        _replyto: email || copyEmail || '',
+        name, state, situation,
+        email: email || 'Not provided',
+        phone: phone || 'Not provided',
+        instagram: instagram || 'Not provided',
+        whatsapp: whatsapp || 'Not provided',
+        copy_requested: copyEmail || 'No'
       })
     });
-  } catch (e) { console.log('Form submit error', e); }
-}
-
-async function sendCopyToClient(emailOrPhone) {
-  const isEmail = emailOrPhone.includes('@');
-  if (isEmail) {
-    try {
-      await fetch(FORMSPREE, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          _subject: 'Your DUN Intake Summary',
-          _replyto: emailOrPhone,
-          to: emailOrPhone,
-          message: 'Here is your DUN intake summary:\n\nName: ' + (intakeData.name||'') + '\nSituation: ' + (intakeData.situation||'') + '\nUrgency: ' + (intakeData.urgency||'') + '\nType: ' + (intakeData.type||'') + '\nContact: ' + (intakeData.contact||'')
-        })
-      });
-    } catch(e) {}
+    document.getElementById('form-container').style.display='none';
+    document.getElementById('form-success').style.display='block';
+  }catch(e){
+    btn.disabled=false; btn.textContent='Send to Devon';
+    alert('Something went wrong. Please try emailing devonisdun@gmail.com directly.');
   }
 }
 
-async function handleIntakeResponse(userMsg) {
-  const steps = lang === 'es' ? INTAKE_STEPS_ES : INTAKE_STEPS_EN;
-  switch(intakeStep) {
-    case 0: intakeData.name = userMsg; break;
-    case 1: intakeData.situation = userMsg; break;
-    case 2: intakeData.urgency = userMsg; break;
-    case 3: intakeData.type = userMsg; break;
-    case 4: intakeData.contact = userMsg; break;
-    case 5:
-      intakeData.copyEmail = userMsg;
-      if (userMsg.includes('@')) { await sendCopyToClient(userMsg); }
-      showIntakeSummary();
-      intakeMode = false;
-      setTimeout(() => appendMessage('assistant', t('closing')), 800);
-      return;
+function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,130)+'px';}
+function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}}
+function sendChip(btn){send(btn.textContent.trim());}
+function scrollToBottom(){document.getElementById('scroll-anchor').scrollIntoView({behavior:'smooth'});}
+
+function appendMessage(role, content){
+  const container=document.getElementById('messages');
+  const div=document.createElement('div');div.className='msg '+role;
+  const avatar=document.createElement('div');avatar.className='avatar '+(role==='assistant'?'dun':'you');avatar.textContent=role==='assistant'?'D':(lang==='es'?'TÚ':'YOU');
+  const bubble=document.createElement('div');bubble.className='bubble';
+  if(role==='assistant'){
+    const clean=content.replace(/[\u{1F300}-\u{1FAFF}]|[\u2600-\u27FF]/gu,'').trim();
+    bubble.innerHTML=clean.replace(/(— Devon\s*)$/m,'<span class="signature">— Devon</span>').replace(/\n/g,'<br/>');
+  }else{bubble.innerHTML=content.replace(/\n/g,'<br/>');}
+  div.appendChild(avatar);div.appendChild(bubble);container.appendChild(div);scrollToBottom();
+}
+
+function showTyping(){const c=document.getElementById('messages');const d=document.createElement('div');d.className='msg assistant';d.id='typing-indicator';const a=document.createElement('div');a.className='avatar dun';a.textContent='D';const dots=document.createElement('div');dots.className='typing-dots';dots.innerHTML='<span></span><span></span><span></span>';d.appendChild(a);d.appendChild(dots);c.appendChild(d);scrollToBottom();}
+function hideTyping(){const el=document.getElementById('typing-indicator');if(el)el.remove();}
+
+async function send(text){
+  if(loading)return;
+  const input=document.getElementById('input');
+  const msg=(text||input.value).trim();if(!msg)return;
+  const ci=document.getElementById('chat-intro');if(ci)ci.style.display='none';
+  input.value='';autoResize(input);
+  messages.push({role:'user',content:msg});
+  appendMessage('user',msg);
+  loading=true;document.getElementById('send-btn').disabled=true;showTyping();
+  try{
+    const res=await fetch('/.netlify/functions/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages,system:lang==='es'?SYSTEM_ES:SYSTEM_EN})});
+    const data=await res.json();
+    hideTyping();
+    if(data.error){appendMessage('assistant','Something went wrong. Please try again.');messages.pop();}
+    else{const reply=data.content?.find(b=>b.type==='text')?.text||'Something went wrong.';messages.push({role:'assistant',content:reply});appendMessage('assistant',reply);}
+  }catch(e){hideTyping();appendMessage('assistant','Something went wrong. Please try again.');messages.pop();}
+  finally{loading=false;document.getElementById('send-btn').disabled=false;}
+}
+
+function openSpanish(){
+  showTab('spanish');
+  // Add spanish tab if not exists
+  if(!document.getElementById('tab-spanish')){
+    // Just scroll to the screen directly
   }
-  intakeStep++;
-  if (intakeStep < steps.length) {
-    showTyping();
-    setTimeout(() => { hideTyping(); appendMessage('assistant', steps[intakeStep]); }, 800);
-    if (intakeStep === 5) {
-      setTimeout(() => {
-        hideTyping();
-        appendMessage('assistant', t('sendCopy'));
-      }, 1600);
-      return;
-    }
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('screen-spanish').classList.add('active');
+}
+
+async function submitSpanishForm(){
+  const name = document.getElementById('sf-name').value.trim();
+  const state = document.getElementById('sf-state').value.trim();
+  const situation = document.getElementById('sf-situation').value.trim();
+  const email = document.getElementById('sf-email').value.trim();
+  const phone = document.getElementById('sf-phone').value.trim();
+  const instagram = document.getElementById('sf-instagram').value.trim();
+  const whatsapp = document.getElementById('sf-whatsapp').value.trim();
+  const copyEmail = document.getElementById('sf-copy').value.trim();
+  const contactError = document.getElementById('spanish-contact-error');
+
+  if(!name || !state || !situation){ alert('Por favor completa tu nombre, estado y condado, y cuéntanos qué está pasando.'); return; }
+  if(!email && !phone && !instagram && !whatsapp){ contactError.style.display='block'; return; }
+  contactError.style.display='none';
+
+  const btn = document.getElementById('spanish-submit-btn');
+  btn.disabled=true; btn.textContent='Enviando...';
+
+  try{
+    await fetch(FORMSPREE, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify({
+        _subject: 'Nueva Solicitud DUN (Español) — ' + name,
+        _replyto: email || copyEmail || '',
+        nombre: name,
+        estado_condado: state,
+        situacion: situation,
+        correo: email || 'No proporcionado',
+        telefono: phone || 'No proporcionado',
+        instagram: instagram || 'No proporcionado',
+        whatsapp: whatsapp || 'No proporcionado',
+        copia_solicitada: copyEmail || 'No',
+        idioma: 'Español'
+      })
+    });
+    document.getElementById('spanish-form-container').style.display='none';
+    document.getElementById('spanish-success').style.display='block';
+  }catch(e){
+    btn.disabled=false; btn.textContent='Enviar a Devon';
+    alert('Algo salió mal. Por favor envía un correo directamente a devonisdun@gmail.com');
   }
 }
 
-function showTyping() {
-  const c = document.getElementById('messages');
-  const d = document.createElement('div'); d.className = 'msg assistant'; d.id = 'typing-indicator';
-  const a = document.createElement('div'); a.className = 'avatar dun'; a.textContent = 'D';
-  const dots = document.createElement('div'); dots.className = 'typing-dots';
-  dots.innerHTML = '<span></span><span></span><span></span>';
-  d.appendChild(a); d.appendChild(dots); c.appendChild(d); scrollToBottom();
-}
-function hideTyping() { const el = document.getElementById('typing-indicator'); if (el) el.remove(); }
+async function submitBizForm(){
+  const name = document.getElementById('bf-name').value.trim();
+  const org = document.getElementById('bf-org').value.trim();
+  const type = document.getElementById('bf-type').value;
+  const pain = document.getElementById('bf-pain').value.trim();
+  const interest = document.getElementById('bf-interest').value.trim();
+  const email = document.getElementById('bf-email').value.trim();
 
-async function send(text) {
-  if (loading) return;
-  const input = document.getElementById('input');
-  const msg = (text || input.value).trim();
-  if (!msg) return;
-  const cw = document.getElementById('chat-welcome');
-  if (cw) cw.style.display = 'none';
-  input.value = ''; autoResize(input);
-  appendMessage('user', msg);
-
-  if (intakeMode) {
-    await handleIntakeResponse(msg);
+  if(!name || !org || !type || !pain || !interest || !email){
+    alert('Please fill in all required fields.');
     return;
   }
 
-  messages.push({ role: 'user', content: msg });
-  loading = true;
-  document.getElementById('send-btn').disabled = true;
-  showTyping();
+  const btn = document.getElementById('biz-submit-btn');
+  btn.disabled=true; btn.textContent='Sending...';
 
-  try {
-    const res = await fetch('/.netlify/functions/chat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages, system: lang === 'es' ? SYSTEM_ES : SYSTEM_EN })
+  try{
+    await fetch(FORMSPREE, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify({
+        _subject: 'DUN for Business Inquiry — ' + org,
+        _replyto: email,
+        contact_name: name,
+        title: document.getElementById('bf-title').value.trim() || 'Not provided',
+        organization: org,
+        org_type: type,
+        staff_size: document.getElementById('bf-staff').value || 'Not provided',
+        clients_per_year: document.getElementById('bf-clients').value || 'Not provided',
+        current_process: document.getElementById('bf-current').value.trim() || 'Not provided',
+        biggest_pain_point: pain,
+        impact_if_solved: document.getElementById('bf-impact').value.trim() || 'Not provided',
+        budget_status: document.getElementById('bf-budget').value || 'Not provided',
+        timeline: document.getElementById('bf-timeline').value || 'Not provided',
+        interest_in_dun: interest,
+        email: email,
+        phone: document.getElementById('bf-phone').value.trim() || 'Not provided',
+        submission_type: 'DUN for Business'
+      })
     });
-    const data = await res.json();
-    hideTyping();
-    if (data.error) { appendMessage('assistant', 'Something went wrong. Please try again.'); messages.pop(); }
-    else {
-      const reply = data.content?.find(b => b.type === 'text')?.text || 'Something went wrong.';
-      messages.push({ role: 'assistant', content: reply });
-      appendMessage('assistant', reply);
-    }
-  } catch (err) {
-    hideTyping();
-    appendMessage('assistant', 'Something went wrong. Please try again.');
-    messages.pop();
-  } finally {
-    loading = false;
-    document.getElementById('send-btn').disabled = false;
+    document.getElementById('biz-form-container').style.display='none';
+    document.getElementById('biz-success').style.display='block';
+  }catch(e){
+    btn.disabled=false; btn.textContent='Send to Devon';
+    alert('Something went wrong. Please email devonisdun@gmail.com directly.');
   }
 }
 </script>
