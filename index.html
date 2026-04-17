@@ -165,7 +165,7 @@
         <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Cash App</div><div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">$sheisdun</div></div>
         <span style="color:#BF8C8C;-webkit-text-fill-color:#BF8C8C;font-size:18px">&#8594;</span>
       </a>
-      <a href="mailto:devonisdun@gmail.com?subject=Payment%20Request" style="display:flex;align-items:center;justify-content:space-between;background:#423232;border:1px solid #695151;border-radius:12px;padding:14px 16px;margin-bottom:0;text-decoration:none;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA">
+      <a href="mailto:done@sheisdun.com?subject=Payment%20Request" style="display:flex;align-items:center;justify-content:space-between;background:#423232;border:1px solid #695151;border-radius:12px;padding:14px 16px;margin-bottom:0;text-decoration:none;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA">
         <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Stripe Invoice</div><div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">Request an invoice by email</div></div>
         <span style="color:#BF8C8C;-webkit-text-fill-color:#BF8C8C;font-size:18px">&#8594;</span>
       </a>
@@ -303,7 +303,7 @@
       </div>
       <div id="biz-success" class="form-success" style="display:none">
         <div class="form-success-title">We will be in touch.</div>
-        <div class="form-success-body">Devon reads every business inquiry personally. You will hear back within 24 hours with something specific to your organization.<br/><br/>In the meantime, feel free to email directly at devonisdun@gmail.com.</div>
+        <div class="form-success-body">Devon reads every business inquiry personally. You will hear back within 24 hours with something specific to your organization.<br/><br/>In the meantime, feel free to email directly at done@sheisdun.com.</div>
         <div class="form-success-sig">— Devon Dun</div>
       </div>
     </div>
@@ -379,7 +379,7 @@
       </a>
     </div>
     <div class="bottom-contact">
-      <a href="mailto:devonisdun@gmail.com" style="color:var(--blush-lt);text-decoration:none">devonisdun@gmail.com</a><br/>
+      <a href="mailto:done@sheisdun.com" style="color:var(--blush-lt);text-decoration:none">done@sheisdun.com</a><br/>
       167 Madison Avenue, Suite 205 No. 1211, New York, NY 10016
     </div>
     <div class="bottom-legal">&#169; 2026 DUN&#8482;. All rights reserved.</div>
@@ -455,7 +455,7 @@ async function submitForm(){
     await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'New DUN Intake — '+name,_replyto:email||copyEmail||'',name,state,situation,email:email||'Not provided',phone:phone||'Not provided',instagram:instagram||'Not provided',whatsapp:whatsapp||'Not provided',copy_requested:copyEmail||'No'})});
     document.getElementById('form-container').style.display='none';
     document.getElementById('form-success').style.display='block';
-  }catch(e){btn.disabled=false;btn.textContent='Send to Devon';alert('Something went wrong. Please try emailing devonisdun@gmail.com directly.');}
+  }catch(e){btn.disabled=false;btn.textContent='Send to Devon';alert('Something went wrong. Please try emailing done@sheisdun.com directly.');}
 }
 
 function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,130)+'px';}
@@ -522,7 +522,7 @@ async function submitSpanishForm(){
     await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'Nueva Solicitud DUN (Español) — '+name,_replyto:email||copyEmail||'',nombre:name,estado_condado:state,situacion:situation,correo:email||'No proporcionado',telefono:phone||'No proporcionado',instagram:instagram||'No proporcionado',whatsapp:whatsapp||'No proporcionado',copia_solicitada:copyEmail||'No',idioma:'Español'})});
     document.getElementById('spanish-form-container').style.display='none';
     document.getElementById('spanish-success').style.display='block';
-  }catch(e){btn.disabled=false;btn.textContent='Enviar a Devon';alert('Algo salió mal. Por favor envía un correo directamente a devonisdun@gmail.com');}
+  }catch(e){btn.disabled=false;btn.textContent='Enviar a Devon';alert('Algo salió mal. Por favor envía un correo directamente a done@sheisdun.com');}
 }
 
 async function submitBizForm(){
@@ -539,7 +539,7 @@ async function submitBizForm(){
     await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'DUN for Business Inquiry — '+org,_replyto:email,contact_name:name,title:document.getElementById('bf-title').value.trim()||'Not provided',organization:org,org_type:type,staff_size:document.getElementById('bf-staff').value||'Not provided',clients_per_year:document.getElementById('bf-clients').value||'Not provided',current_process:document.getElementById('bf-current').value.trim()||'Not provided',biggest_pain_point:pain,impact_if_solved:document.getElementById('bf-impact').value.trim()||'Not provided',budget_status:document.getElementById('bf-budget').value||'Not provided',timeline:document.getElementById('bf-timeline').value||'Not provided',interest_in_dun:interest,email:email,phone:document.getElementById('bf-phone').value.trim()||'Not provided',submission_type:'DUN for Business'})});
     document.getElementById('biz-form-container').style.display='none';
     document.getElementById('biz-success').style.display='block';
-  }catch(e){btn.disabled=false;btn.textContent='Send to Devon';alert('Something went wrong. Please email devonisdun@gmail.com directly.');}
+  }catch(e){btn.disabled=false;btn.textContent='Send to Devon';alert('Something went wrong. Please email done@sheisdun.com directly.');}
 }
 </script>
 </body>
