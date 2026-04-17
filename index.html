@@ -18,26 +18,18 @@
     :root{--bg:#423232;--card:#8A7272;--card-dark:#6B5555;--blush:#BF8C8C;--blush-lt:#D4AAAA;--text:#301212;--text-lt:#FCF2F2;--outline:#695151;--border:#7A6060;--safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px)}
     html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Fredoka',sans-serif;font-weight:300}
     #app{display:flex;flex-direction:column;height:100dvh;max-width:680px;margin:0 auto;padding-top:var(--safe-top);padding-bottom:var(--safe-bot);position:relative;overflow:hidden}
-
-    /* HEADER */
     header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 10px;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0}
     .wordmark{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;letter-spacing:0.12em;color:var(--blush);cursor:pointer}
     .header-tag{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--blush-lt);opacity:0.4}
-
-    /* TABS */
     .tab-bar{display:flex;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0}
     .tab{flex:1;padding:10px 2px;font-family:'Fredoka',sans-serif;font-size:10px;letter-spacing:0.04em;text-transform:uppercase;color:var(--blush-lt);opacity:0.45;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;-webkit-tap-highlight-color:transparent;line-height:1.3}
     .tab.active{color:var(--blush);opacity:1;border-bottom-color:var(--blush)}
     .tab.ready-tab{color:var(--blush);opacity:0.8;border:1px solid var(--blush);border-radius:20px;margin:6px 4px;padding:6px 8px;border-bottom:1px solid var(--blush)}
     .tab.ready-tab.active{background:var(--blush);color:var(--text);opacity:1}
-
-    /* SCREENS */
     .screen{display:none;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
     .screen.active{display:flex;flex-direction:column}
     .screen::-webkit-scrollbar{width:4px}
     .screen::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-
-    /* HOME */
     #screen-home{padding:40px 24px 32px;align-items:center;text-align:center}
     .home-headline{font-family:'Playfair Display',serif;font-size:clamp(30px,8vw,48px);font-weight:400;line-height:1.1;color:var(--blush);margin-bottom:14px}
     .home-headline em{font-style:italic;color:var(--blush-lt)}
@@ -57,8 +49,6 @@
     .promise:last-child{border-bottom:none}
     .promise-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--blush-lt);margin-bottom:6px}
     .promise-body{font-size:14px;font-weight:300;color:var(--text-lt);line-height:1.6;opacity:0.8}
-
-    /* CHAT */
     #screen-chat{flex-direction:column}
     #chat-messages{flex:1;overflow-y:auto;padding:0 20px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
     #chat-messages::-webkit-scrollbar{width:4px}
@@ -93,8 +83,6 @@
     .send-btn:disabled{background:var(--outline);cursor:default}
     .disclaimer{text-align:center;font-size:10px;font-family:'Fredoka',sans-serif;color:var(--blush-lt);opacity:0.35;letter-spacing:0.06em;margin-top:8px}
     #scroll-anchor{height:1px}
-
-    /* WHAT IS DUN */
     #screen-dun{padding:0;flex-direction:column}
     .dun-subtabs{display:flex;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0}
     .dun-subtab{flex:1;padding:12px 4px;font-family:'Fredoka',sans-serif;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--blush-lt);opacity:0.45;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;-webkit-tap-highlight-color:transparent}
@@ -113,8 +101,6 @@
     .biz-stat-body{font-size:13px;font-weight:300;color:var(--text-lt);line-height:1.6;opacity:0.8}
     .dun-tagline{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--blush);margin:24px 0;line-height:1.3}
     .dun-cta{display:block;background:var(--blush);color:var(--text);border:none;border-radius:40px;padding:14px 28px;font-family:'Fredoka',sans-serif;font-size:15px;font-weight:500;text-align:center;text-decoration:none;margin-top:24px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-
-    /* I'M READY FORM */
     #screen-ready{padding:28px 24px 48px}
     .form-heading{font-family:'Playfair Display',serif;font-size:26px;color:var(--blush);margin-bottom:8px}
     .form-subhead{font-size:14px;font-weight:300;color:var(--text-lt);opacity:0.75;line-height:1.65;margin-bottom:8px}
@@ -137,8 +123,6 @@
     .form-success-body{font-size:14px;font-weight:300;color:var(--text-lt);line-height:1.8;opacity:0.85;margin-bottom:10px}
     .form-success-sig{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--blush);opacity:0.8}
     .form-error{font-size:12px;color:#E8A09A;margin-top:6px;display:none}
-
-    /* BOTTOM BAR */
     .bottom-bar{flex-shrink:0;border-top:1px solid var(--border);padding:14px 20px 18px;background:var(--bg);display:flex;flex-direction:column;gap:12px}
     .bottom-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
     .bottom-btn{background:transparent;border:1px solid var(--outline);border-radius:20px;padding:5px 12px;font-family:'Fredoka',sans-serif;font-size:11px;color:var(--blush-lt);cursor:pointer;-webkit-tap-highlight-color:transparent;text-decoration:none;display:inline-block}
@@ -146,8 +130,6 @@
     .social-icon{width:30px;height:30px;border-radius:50%;border:1px solid var(--outline);display:flex;align-items:center;justify-content:center;color:var(--blush-lt);text-decoration:none;-webkit-tap-highlight-color:transparent}
     .bottom-contact{text-align:center;font-size:11px;font-weight:300;color:var(--blush-lt);opacity:0.45;line-height:1.9}
     .bottom-legal{text-align:center;font-size:10px;color:var(--blush-lt);opacity:0.3;letter-spacing:0.06em}
-
-    /* SAFETY */
     #safety-screen{display:none;position:absolute;inset:0;background:#1A0A0A;z-index:100;flex-direction:column;padding-top:var(--safe-top)}
     #safety-screen.visible{display:flex}
     .safety-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 14px;border-bottom:1px solid #3A1A1A}
@@ -170,41 +152,26 @@
 <body>
 <div id="app">
 
-
-  <!-- PAYMENTS OVERLAY -->
   <div id="payments-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(48,18,18,0.96);z-index:9999;align-items:center;justify-content:center;padding:20px;box-sizing:border-box">
     <div style="background:#6B5555;border:1px solid #BF8C8C;border-radius:20px;padding:28px 22px;max-width:400px;width:100%;position:relative;box-sizing:border-box">
       <button onclick="closePayments()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:#BF8C8C;cursor:pointer;font-size:22px;line-height:1;padding:0">&#x2715;</button>
       <div style="font-family:'Playfair Display',Georgia,serif;font-size:22px;color:#BF8C8C;margin-bottom:10px;font-weight:700">Make a Payment</div>
       <div style="font-size:13px;color:#FCF2F2;line-height:1.7;margin-bottom:22px;opacity:0.85">Devon will send you an invoice with the amount due. Once you receive it, pay through any of the options below.</div>
-
       <a href="https://venmo.com/" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#423232;border:1px solid #695151;border-radius:12px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA">
-        <div>
-          <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Venmo</div>
-          <div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">@sheisdun</div>
-        </div>
+        <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Venmo</div><div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">@sheisdun</div></div>
         <span style="color:#BF8C8C;-webkit-text-fill-color:#BF8C8C;font-size:18px">&#8594;</span>
       </a>
-
       <a href="https://cash.app/" target="_blank" style="display:flex;align-items:center;justify-content:space-between;background:#423232;border:1px solid #695151;border-radius:12px;padding:14px 16px;margin-bottom:10px;text-decoration:none;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA">
-        <div>
-          <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Cash App</div>
-          <div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">$sheisdun</div>
-        </div>
+        <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Cash App</div><div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">$sheisdun</div></div>
         <span style="color:#BF8C8C;-webkit-text-fill-color:#BF8C8C;font-size:18px">&#8594;</span>
       </a>
-
       <a href="mailto:devonisdun@gmail.com?subject=Payment%20Request" style="display:flex;align-items:center;justify-content:space-between;background:#423232;border:1px solid #695151;border-radius:12px;padding:14px 16px;margin-bottom:0;text-decoration:none;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA">
-        <div>
-          <div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Stripe Invoice</div>
-          <div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">Request an invoice by email</div>
-        </div>
+        <div><div style="font-family:'Playfair Display',Georgia,serif;font-size:16px;color:#D4AAAA;-webkit-text-fill-color:#D4AAAA;text-decoration:none">Stripe Invoice</div><div style="font-size:11px;color:#FCF2F2;-webkit-text-fill-color:#FCF2F2;opacity:0.5;margin-top:3px">Request an invoice by email</div></div>
         <span style="color:#BF8C8C;-webkit-text-fill-color:#BF8C8C;font-size:18px">&#8594;</span>
       </a>
     </div>
   </div>
 
-    <!-- SAFETY SCREEN -->
   <div id="safety-screen">
     <div class="safety-header">
       <div class="safety-header-title">Your safety comes first.</div>
@@ -223,13 +190,11 @@
     </div>
   </div>
 
-  <!-- HEADER -->
   <header>
     <div class="wordmark" onclick="showTab('home')">DUN</div>
     <div class="header-tag">Not legal advice</div>
   </header>
 
-  <!-- TABS -->
   <div class="tab-bar">
     <button class="tab active" id="tab-home" onclick="showTab('home')">Home</button>
     <button class="tab" id="tab-chat" onclick="showTab('chat')">Ask Devon</button>
@@ -237,7 +202,6 @@
     <button class="tab ready-tab" id="tab-ready" onclick="showTab('ready')">I'm Ready</button>
   </div>
 
-  <!-- HOME -->
   <div class="screen active" id="screen-home">
     <h1 class="home-headline">You're here because you are<br/>ready to be <em>done.</em></h1>
     <p class="home-sub">You focus on getting through this. DUN will handle the rest.</p>
@@ -263,7 +227,6 @@
     </div>
   </div>
 
-  <!-- ASK DEVON -->
   <div class="screen" id="screen-chat">
     <div id="chat-messages">
       <div class="chat-intro" id="chat-intro">
@@ -292,7 +255,6 @@
     </div>
   </div>
 
-  <!-- WHAT IS DUN -->
   <div class="screen" id="screen-dun">
     <div class="dun-subtabs">
       <button class="dun-subtab active" id="subtab-individual" onclick="showSubtab('individual')">For Individuals</button>
@@ -320,191 +282,53 @@
       <div class="biz-stat"><div class="biz-stat-title">White label and partnership options</div><div class="biz-stat-body">DUN can operate under your brand. Your clients get the same powerful platform, your organization gets the credit.</div></div>
       <div class="biz-stat"><div class="biz-stat-title">Multilingual support</div><div class="biz-stat-body">DUN operates in English and Spanish, with additional languages in development.</div></div>
       <div class="dun-divider"></div>
-
       <div id="biz-form-container">
         <p style="font-size:15px;font-weight:300;color:var(--text-lt);line-height:1.7;opacity:0.85;margin-bottom:6px">Tell us about your organization.</p>
         <p style="font-size:12px;font-weight:300;color:var(--blush-lt);opacity:0.6;line-height:1.6;margin-bottom:24px;font-style:italic">Every response is read personally. We will come back to you with something specific, not a brochure.</p>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-name">Your name <span>*</span></label>
-          <input class="form-input" id="bf-name" type="text" placeholder="First and last name" />
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-title">Your title</label>
-          <input class="form-input" id="bf-title" type="text" placeholder="e.g. Executive Director, Managing Partner" />
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-org">Organization name <span>*</span></label>
-          <input class="form-input" id="bf-org" type="text" placeholder="Your organization" />
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-type">Type of organization <span>*</span></label>
-          <select class="form-input" id="bf-type" style="cursor:pointer">
-            <option value="" disabled selected>Select one</option>
-            <option>Law firm or solo practitioner</option>
-            <option>Domestic violence organization or shelter</option>
-            <option>Nonprofit legal aid organization</option>
-            <option>Court or judicial office</option>
-            <option>Social service agency</option>
-            <option>Corporate HR or employee assistance program</option>
-            <option>Hospital or healthcare system</option>
-            <option>Insurance company</option>
-            <option>Government agency</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-staff">Number of staff members</label>
-          <select class="form-input" id="bf-staff" style="cursor:pointer">
-            <option value="" disabled selected>Select a range</option>
-            <option>1 to 5</option>
-            <option>6 to 25</option>
-            <option>26 to 100</option>
-            <option>101 to 500</option>
-            <option>500 or more</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-clients">Clients or cases served per year</label>
-          <select class="form-input" id="bf-clients" style="cursor:pointer">
-            <option value="" disabled selected>Select a range</option>
-            <option>Under 50</option>
-            <option>50 to 250</option>
-            <option>251 to 1,000</option>
-            <option>1,001 to 5,000</option>
-            <option>More than 5,000</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-current">How are you currently handling document preparation for clients?</label>
-          <textarea class="form-textarea" id="bf-current" placeholder="e.g. in-house staff, outside attorneys, clients handle it themselves, not at all" style="min-height:80px"></textarea>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-pain">What is your biggest pain point right now when it comes to supporting clients through legal processes? <span>*</span></label>
-          <textarea class="form-textarea" id="bf-pain" placeholder="Be as specific as you can. This is where we will focus our response."></textarea>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-impact">What would it mean for your organization if document preparation was no longer a bottleneck?</label>
-          <textarea class="form-textarea" id="bf-impact" placeholder="Think about time, cost, staff capacity, client outcomes..." style="min-height:80px"></textarea>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-budget">Do you have a budget allocated for legal technology or document services?</label>
-          <select class="form-input" id="bf-budget" style="cursor:pointer">
-            <option value="" disabled selected>Select one</option>
-            <option>Yes, budget is confirmed</option>
-            <option>Yes, but it needs approval</option>
-            <option>No budget yet but we are exploring</option>
-            <option>We rely on grants or funding</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-timeline">How soon are you looking to implement a solution?</label>
-          <select class="form-input" id="bf-timeline" style="cursor:pointer">
-            <option value="" disabled selected>Select one</option>
-            <option>Immediately</option>
-            <option>Within 3 months</option>
-            <option>Within 6 months</option>
-            <option>Exploring for next year</option>
-            <option>Just researching for now</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-interest">What interests you most about DUN? <span>*</span></label>
-          <textarea class="form-textarea" id="bf-interest" placeholder="e.g. white label, staff support, client-facing platform, bilingual access, partnership..." style="min-height:80px"></textarea>
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-email">Email address <span>*</span></label>
-          <input class="form-input" id="bf-email" type="email" placeholder="Best email to reach you" />
-        </div>
-
-        <div class="form-field">
-          <label class="form-label" for="bf-phone">Phone number</label>
-          <input class="form-input" id="bf-phone" type="tel" placeholder="Optional" />
-        </div>
-
+        <div class="form-field"><label class="form-label" for="bf-name">Your name <span>*</span></label><input class="form-input" id="bf-name" type="text" placeholder="First and last name" /></div>
+        <div class="form-field"><label class="form-label" for="bf-title">Your title</label><input class="form-input" id="bf-title" type="text" placeholder="e.g. Executive Director, Managing Partner" /></div>
+        <div class="form-field"><label class="form-label" for="bf-org">Organization name <span>*</span></label><input class="form-input" id="bf-org" type="text" placeholder="Your organization" /></div>
+        <div class="form-field"><label class="form-label" for="bf-type">Type of organization <span>*</span></label><select class="form-input" id="bf-type" style="cursor:pointer"><option value="" disabled selected>Select one</option><option>Law firm or solo practitioner</option><option>Domestic violence organization or shelter</option><option>Nonprofit legal aid organization</option><option>Court or judicial office</option><option>Social service agency</option><option>Corporate HR or employee assistance program</option><option>Hospital or healthcare system</option><option>Insurance company</option><option>Government agency</option><option>Other</option></select></div>
+        <div class="form-field"><label class="form-label" for="bf-staff">Number of staff members</label><select class="form-input" id="bf-staff" style="cursor:pointer"><option value="" disabled selected>Select a range</option><option>1 to 5</option><option>6 to 25</option><option>26 to 100</option><option>101 to 500</option><option>500 or more</option></select></div>
+        <div class="form-field"><label class="form-label" for="bf-clients">Clients or cases served per year</label><select class="form-input" id="bf-clients" style="cursor:pointer"><option value="" disabled selected>Select a range</option><option>Under 50</option><option>50 to 250</option><option>251 to 1,000</option><option>1,001 to 5,000</option><option>More than 5,000</option></select></div>
+        <div class="form-field"><label class="form-label" for="bf-current">How are you currently handling document preparation?</label><textarea class="form-textarea" id="bf-current" placeholder="e.g. in-house staff, outside attorneys, clients handle it themselves" style="min-height:80px"></textarea></div>
+        <div class="form-field"><label class="form-label" for="bf-pain">What is your biggest pain point? <span>*</span></label><textarea class="form-textarea" id="bf-pain" placeholder="Be as specific as you can."></textarea></div>
+        <div class="form-field"><label class="form-label" for="bf-impact">What would it mean if document preparation was no longer a bottleneck?</label><textarea class="form-textarea" id="bf-impact" placeholder="Think about time, cost, staff capacity, client outcomes..." style="min-height:80px"></textarea></div>
+        <div class="form-field"><label class="form-label" for="bf-budget">Do you have a budget allocated?</label><select class="form-input" id="bf-budget" style="cursor:pointer"><option value="" disabled selected>Select one</option><option>Yes, budget is confirmed</option><option>Yes, but it needs approval</option><option>No budget yet but we are exploring</option><option>We rely on grants or funding</option><option>Not sure yet</option></select></div>
+        <div class="form-field"><label class="form-label" for="bf-timeline">How soon are you looking to implement?</label><select class="form-input" id="bf-timeline" style="cursor:pointer"><option value="" disabled selected>Select one</option><option>Immediately</option><option>Within 3 months</option><option>Within 6 months</option><option>Exploring for next year</option><option>Just researching for now</option></select></div>
+        <div class="form-field"><label class="form-label" for="bf-interest">What interests you most about DUN? <span>*</span></label><textarea class="form-textarea" id="bf-interest" placeholder="e.g. white label, staff support, bilingual access, partnership..." style="min-height:80px"></textarea></div>
+        <div class="form-field"><label class="form-label" for="bf-email">Email address <span>*</span></label><input class="form-input" id="bf-email" type="email" placeholder="Best email to reach you" /></div>
+        <div class="form-field"><label class="form-label" for="bf-phone">Phone number</label><input class="form-input" id="bf-phone" type="tel" placeholder="Optional" /></div>
         <button class="dun-cta" id="biz-submit-btn" onclick="submitBizForm()" style="margin-top:16px;border:none;cursor:pointer">Send to Devon</button>
       </div>
-
       <div id="biz-success" class="form-success" style="display:none">
         <div class="form-success-title">We will be in touch.</div>
-        <div class="form-success-body">Devon reads every business inquiry personally. You will hear back within 24 hours with something specific to your organization — not a brochure, not a template.<br/><br/>In the meantime, feel free to email directly at devonisdun@gmail.com.</div>
+        <div class="form-success-body">Devon reads every business inquiry personally. You will hear back within 24 hours with something specific to your organization.<br/><br/>In the meantime, feel free to email directly at devonisdun@gmail.com.</div>
         <div class="form-success-sig">— Devon Dun</div>
       </div>
     </div>
   </div>
 
-  <!-- I'M READY FORM -->
   <div class="screen" id="screen-ready">
     <div id="form-container">
       <div class="form-heading">Let's get started.</div>
       <div class="form-subhead">Tell us a little about your situation and how to reach you. Devon reads every submission personally and will respond within 24 hours.</div>
       <div class="form-disclaimer">Feel free to fill this out using a different name or any contact information that feels safe. We just need a way to reach you.</div>
-
       <div class="form-section-title">About you</div>
-
-      <div class="form-field">
-        <label class="form-label" for="f-name">Name <span>*</span></label>
-        <input class="form-input" id="f-name" type="text" placeholder="Any name you'd like us to use" required />
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="f-state">State and County <span>*</span></label>
-        <input class="form-input" id="f-state" type="text" placeholder="e.g. New York, Kings County" required />
-      </div>
-
+      <div class="form-field"><label class="form-label" for="f-name">Name <span>*</span></label><input class="form-input" id="f-name" type="text" placeholder="Any name you'd like us to use" required /></div>
+      <div class="form-field"><label class="form-label" for="f-state">State and County <span>*</span></label><input class="form-input" id="f-state" type="text" placeholder="e.g. New York, Kings County" required /></div>
       <div class="form-section-title">How to reach you</div>
       <p class="contact-note">Please provide at least one way to contact you. Use whatever feels safest.</p>
-
-      <div class="form-field">
-        <label class="form-label" for="f-email">Email</label>
-        <input class="form-input" id="f-email" type="email" placeholder="Your email address" />
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="f-phone">Phone number</label>
-        <input class="form-input" id="f-phone" type="tel" placeholder="Your phone number" />
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="f-instagram">Instagram</label>
-        <input class="form-input" id="f-instagram" type="text" placeholder="@yourhandle" />
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="f-whatsapp">WhatsApp</label>
-        <input class="form-input" id="f-whatsapp" type="tel" placeholder="WhatsApp number" />
-      </div>
-
+      <div class="form-field"><label class="form-label" for="f-email">Email</label><input class="form-input" id="f-email" type="email" placeholder="Your email address" /></div>
+      <div class="form-field"><label class="form-label" for="f-phone">Phone number</label><input class="form-input" id="f-phone" type="tel" placeholder="Your phone number" /></div>
+      <div class="form-field"><label class="form-label" for="f-instagram">Instagram</label><input class="form-input" id="f-instagram" type="text" placeholder="@yourhandle" /></div>
+      <div class="form-field"><label class="form-label" for="f-whatsapp">WhatsApp</label><input class="form-input" id="f-whatsapp" type="tel" placeholder="WhatsApp number" /></div>
       <div id="contact-error" class="form-error">Please provide at least one way to contact you.</div>
-
       <div class="form-section-title">Your situation</div>
-
-      <div class="form-field">
-        <label class="form-label" for="f-situation">Tell me what is going on <span>*</span></label>
-        <textarea class="form-textarea" id="f-situation" placeholder="You don't have to have it all figured out. Just give me the basics." required></textarea>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="f-copy">Send me a copy of this</label>
-        <input class="form-input" id="f-copy" type="email" placeholder="Email address for your copy (optional)" />
-      </div>
-
+      <div class="form-field"><label class="form-label" for="f-situation">Tell me what is going on <span>*</span></label><textarea class="form-textarea" id="f-situation" placeholder="You don't have to have it all figured out. Just give me the basics." required></textarea></div>
+      <div class="form-field"><label class="form-label" for="f-copy">Send me a copy of this</label><input class="form-input" id="f-copy" type="email" placeholder="Email address for your copy (optional)" /></div>
       <button class="form-submit" id="form-submit-btn" onclick="submitForm()">Send to Devon</button>
     </div>
-
     <div id="form-success" class="form-success" style="display:none">
       <div class="form-success-title">You did it.</div>
       <div class="form-success-body">Take a breath. Your information is safe and everything you shared is completely confidential.<br/><br/>You will hear from Devon personally within 24 hours.<br/><br/>Add DUN to your home screen so we can stay in touch easily. Tap the share icon at the bottom of your browser and select Add to Home Screen.</div>
@@ -512,93 +336,34 @@
     </div>
   </div>
 
-
-  <!-- SPANISH SCREEN -->
   <div class="screen" id="screen-spanish">
-    <h1 class="spanish-hero">Estás aquí porque estás<br/>lista para <em>terminar.</em></h1>
-    <p class="spanish-sub">Tú te enfocas en salir adelante. DUN se encarga del resto.<br/><br/>DUN prepara documentos legales para mujeres que necesitan apoyo con los trámites para presentarse preparadas ante la corte. Leemos cada solicitud personalmente y respondemos en menos de 24 horas.</p>
-
-    <div class="spanish-divider"></div>
-
-    <div class="spanish-section-title">Lo que DUN prepara para ti</div>
-
-    <div class="spanish-service">Petición de divorcio y respuesta</div>
-    <div class="spanish-service">Acuerdos de separación legal</div>
-    <div class="spanish-service">Acuerdos de custodia y planes de crianza</div>
-    <div class="spanish-service">Hojas de cálculo de manutención infantil</div>
-    <div class="spanish-service">Órdenes de protección</div>
-    <div class="spanish-service">Documentación de violencia doméstica</div>
-    <div class="spanish-service">Documentación de VAWA y Visa U</div>
-    <div class="spanish-service">Apoyo para solicitudes de asilo</div>
-    <div class="spanish-service">Renovación de DACA</div>
-    <div class="spanish-service">Peticiones de cambio de nombre</div>
-    <div class="spanish-service">Organización de documentos judiciales</div>
-
-    <div class="spanish-divider"></div>
-
-    <div id="spanish-form-container">
-      <div class="spanish-form-heading">Cuéntanos tu situación.</div>
-      <p class="spanish-sub" style="margin-bottom:8px">Devon lee cada solicitud personalmente y te responderá en menos de 24 horas.</p>
-      <p class="spanish-form-note">Puedes usar cualquier nombre o información de contacto que se sienta segura. Solo necesitamos una forma de comunicarnos contigo.</p>
-
-      <div class="form-field">
-        <label class="form-label" for="sf-name">Nombre <span>*</span></label>
-        <input class="form-input" id="sf-name" type="text" placeholder="Cualquier nombre que prefieras" required />
+    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(28px,7vw,44px);font-weight:400;line-height:1.1;color:var(--blush);margin-bottom:14px;padding:40px 24px 0;text-align:center">Estás aquí porque estás<br/>lista para <em>terminar.</em></h1>
+    <p style="font-size:14px;font-weight:300;color:var(--text-lt);line-height:1.65;opacity:0.85;margin-bottom:32px;max-width:400px;padding:0 24px;text-align:center">Tú te enfocas en salir adelante. DUN se encarga del resto.<br/><br/>DUN prepara documentos legales para mujeres que necesitan apoyo con los trámites para presentarse preparadas ante la corte. Leemos cada solicitud personalmente y respondemos en menos de 24 horas.</p>
+    <div style="height:1px;background:var(--border);margin:0 24px 28px"></div>
+    <div style="padding:0 24px 48px">
+      <div id="spanish-form-container">
+        <p style="font-size:15px;font-weight:300;color:var(--text-lt);line-height:1.7;opacity:0.85;margin-bottom:6px">Cuéntanos tu situación.</p>
+        <p style="font-size:12px;font-weight:300;color:var(--blush-lt);opacity:0.6;line-height:1.6;margin-bottom:24px;font-style:italic">Puedes usar cualquier nombre o información de contacto que se sienta segura.</p>
+        <div class="form-field"><label class="form-label" for="sf-name">Nombre <span>*</span></label><input class="form-input" id="sf-name" type="text" placeholder="Cualquier nombre que prefieras" required /></div>
+        <div class="form-field"><label class="form-label" for="sf-state">Estado y condado <span>*</span></label><input class="form-input" id="sf-state" type="text" placeholder="ej. New York, Kings County" required /></div>
+        <div class="form-field"><label class="form-label">Cómo contactarte</label><p style="font-size:12px;color:var(--blush-lt);opacity:0.55;margin-bottom:12px;line-height:1.5">Por favor proporciona al menos una forma de contacto que se sienta segura.</p></div>
+        <div class="form-field"><label class="form-label" for="sf-email">Correo electrónico</label><input class="form-input" id="sf-email" type="email" placeholder="Tu correo electrónico" /></div>
+        <div class="form-field"><label class="form-label" for="sf-phone">Número de teléfono</label><input class="form-input" id="sf-phone" type="tel" placeholder="Tu número de teléfono" /></div>
+        <div class="form-field"><label class="form-label" for="sf-instagram">Instagram</label><input class="form-input" id="sf-instagram" type="text" placeholder="@tuusuario" /></div>
+        <div class="form-field"><label class="form-label" for="sf-whatsapp">WhatsApp</label><input class="form-input" id="sf-whatsapp" type="tel" placeholder="Número de WhatsApp" /></div>
+        <div id="spanish-contact-error" class="form-error">Por favor proporciona al menos una forma de contacto.</div>
+        <div class="form-field" style="margin-top:20px"><label class="form-label" for="sf-situation">Cuéntame qué está pasando <span>*</span></label><textarea class="form-textarea" id="sf-situation" placeholder="No tienes que tenerlo todo claro. Solo dime lo básico."></textarea></div>
+        <div class="form-field"><label class="form-label" for="sf-copy">Envíame una copia</label><input class="form-input" id="sf-copy" type="email" placeholder="Correo para tu copia (opcional)" /></div>
+        <button class="form-submit" id="spanish-submit-btn" onclick="submitSpanishForm()">Enviar a Devon</button>
       </div>
-
-      <div class="form-field">
-        <label class="form-label" for="sf-state">Estado y condado <span>*</span></label>
-        <input class="form-input" id="sf-state" type="text" placeholder="ej. New York, Kings County" required />
+      <div id="spanish-success" class="form-success" style="display:none">
+        <div class="form-success-title">Lo lograste.</div>
+        <div class="form-success-body">Respira. Tu información está segura y todo lo que compartiste es completamente confidencial.<br/><br/>Escucharás de Devon personalmente dentro de las próximas 24 horas.</div>
+        <div class="form-success-sig">— Devon Dun</div>
       </div>
-
-      <div class="form-field" style="margin-top:20px">
-        <label class="form-label">Cómo contactarte</label>
-        <p class="spanish-form-note" style="margin-bottom:12px">Por favor proporciona al menos una forma de contacto que se sienta segura.</p>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="sf-email">Correo electrónico</label>
-        <input class="form-input" id="sf-email" type="email" placeholder="Tu correo electrónico" />
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="sf-phone">Número de teléfono</label>
-        <input class="form-input" id="sf-phone" type="tel" placeholder="Tu número de teléfono" />
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="sf-instagram">Instagram</label>
-        <input class="form-input" id="sf-instagram" type="text" placeholder="@tuusuario" />
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="sf-whatsapp">WhatsApp</label>
-        <input class="form-input" id="sf-whatsapp" type="tel" placeholder="Número de WhatsApp" />
-      </div>
-
-      <div id="spanish-contact-error" class="form-error">Por favor proporciona al menos una forma de contacto.</div>
-
-      <div class="form-field" style="margin-top:20px">
-        <label class="form-label" for="sf-situation">Cuéntame qué está pasando <span>*</span></label>
-        <textarea class="form-textarea" id="sf-situation" placeholder="No tienes que tenerlo todo claro. Solo dime lo básico."></textarea>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="sf-copy">Envíame una copia</label>
-        <input class="form-input" id="sf-copy" type="email" placeholder="Correo para tu copia (opcional)" />
-      </div>
-
-      <button class="form-submit" id="spanish-submit-btn" onclick="submitSpanishForm()">Enviar a Devon</button>
-    </div>
-
-    <div id="spanish-success" class="form-success" style="display:none">
-      <div class="form-success-title">Lo lograste.</div>
-      <div class="form-success-body">Respira. Tu información está segura y todo lo que compartiste es completamente confidencial.<br/><br/>Escucharás de Devon personalmente dentro de las próximas 24 horas.<br/><br/>Agrega DUN a tu pantalla de inicio para que podamos mantenernos en contacto fácilmente. Toca el ícono de compartir en tu navegador y selecciona Agregar a pantalla de inicio.</div>
-      <div class="form-success-sig">— Devon Dun</div>
     </div>
   </div>
 
-  <!-- BOTTOM BAR -->
   <div class="bottom-bar">
     <div class="bottom-row">
       <button class="bottom-btn safety" onclick="openSafety()">Are you safe?</button>
@@ -668,58 +433,29 @@ function showSubtab(n){
   document.getElementById('subtab-'+n).classList.add('active');
 }
 
-function toggleLang(){
-  lang = lang==='en'?'es':'en';
-  document.getElementById('lang-toggle').textContent = lang==='en'?'Español':'English';
-}
-
-function openPayments(){
-  document.getElementById('payments-overlay').style.display='flex';
-}
-function closePayments(){
-  document.getElementById('payments-overlay').style.display='none';
-}
+function openPayments(){ document.getElementById('payments-overlay').style.display='flex'; }
+function closePayments(){ document.getElementById('payments-overlay').style.display='none'; }
 
 async function submitForm(){
-  const name = document.getElementById('f-name').value.trim();
-  const state = document.getElementById('f-state').value.trim();
-  const situation = document.getElementById('f-situation').value.trim();
-  const email = document.getElementById('f-email').value.trim();
-  const phone = document.getElementById('f-phone').value.trim();
-  const instagram = document.getElementById('f-instagram').value.trim();
-  const whatsapp = document.getElementById('f-whatsapp').value.trim();
-  const copyEmail = document.getElementById('f-copy').value.trim();
-
-  const contactError = document.getElementById('contact-error');
-
-  if(!name || !state || !situation){ alert('Please fill in your name, state and county, and tell us what is going on.'); return; }
-  if(!email && !phone && !instagram && !whatsapp){ contactError.style.display='block'; return; }
+  const name=document.getElementById('f-name').value.trim();
+  const state=document.getElementById('f-state').value.trim();
+  const situation=document.getElementById('f-situation').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const instagram=document.getElementById('f-instagram').value.trim();
+  const whatsapp=document.getElementById('f-whatsapp').value.trim();
+  const copyEmail=document.getElementById('f-copy').value.trim();
+  const contactError=document.getElementById('contact-error');
+  if(!name||!state||!situation){alert('Please fill in your name, state and county, and tell us what is going on.');return;}
+  if(!email&&!phone&&!instagram&&!whatsapp){contactError.style.display='block';return;}
   contactError.style.display='none';
-
-  const btn = document.getElementById('form-submit-btn');
-  btn.disabled=true; btn.textContent='Sending...';
-
+  const btn=document.getElementById('form-submit-btn');
+  btn.disabled=true;btn.textContent='Sending...';
   try{
-    await fetch(FORMSPREE, {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify({
-        _subject: 'New DUN Intake — ' + name,
-        _replyto: email || copyEmail || '',
-        name, state, situation,
-        email: email || 'Not provided',
-        phone: phone || 'Not provided',
-        instagram: instagram || 'Not provided',
-        whatsapp: whatsapp || 'Not provided',
-        copy_requested: copyEmail || 'No'
-      })
-    });
+    await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'New DUN Intake — '+name,_replyto:email||copyEmail||'',name,state,situation,email:email||'Not provided',phone:phone||'Not provided',instagram:instagram||'Not provided',whatsapp:whatsapp||'Not provided',copy_requested:copyEmail||'No'})});
     document.getElementById('form-container').style.display='none';
     document.getElementById('form-success').style.display='block';
-  }catch(e){
-    btn.disabled=false; btn.textContent='Send to Devon';
-    alert('Something went wrong. Please try emailing devonisdun@gmail.com directly.');
-  }
+  }catch(e){btn.disabled=false;btn.textContent='Send to Devon';alert('Something went wrong. Please try emailing devonisdun@gmail.com directly.');}
 }
 
 function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,130)+'px';}
@@ -727,7 +463,7 @@ function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()
 function sendChip(btn){send(btn.textContent.trim());}
 function scrollToBottom(){document.getElementById('scroll-anchor').scrollIntoView({behavior:'smooth'});}
 
-function appendMessage(role, content){
+function appendMessage(role,content){
   const container=document.getElementById('messages');
   const div=document.createElement('div');div.className='msg '+role;
   const avatar=document.createElement('div');avatar.className='avatar '+(role==='assistant'?'dun':'you');avatar.textContent=role==='assistant'?'D':(lang==='es'?'TÚ':'YOU');
@@ -752,7 +488,7 @@ async function send(text){
   appendMessage('user',msg);
   loading=true;document.getElementById('send-btn').disabled=true;showTyping();
   try{
-    const res=await fetch('/.netlify/functions/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages,system:lang==='es'?SYSTEM_ES:SYSTEM_EN})});
+    const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages,system:lang==='es'?SYSTEM_ES:SYSTEM_EN})});
     const data=await res.json();
     hideTyping();
     if(data.error){appendMessage('assistant','Something went wrong. Please try again.');messages.pop();}
@@ -762,106 +498,48 @@ async function send(text){
 }
 
 function openSpanish(){
-  showTab('spanish');
-  // Add spanish tab if not exists
-  if(!document.getElementById('tab-spanish')){
-    // Just scroll to the screen directly
-  }
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('screen-spanish').classList.add('active');
 }
 
 async function submitSpanishForm(){
-  const name = document.getElementById('sf-name').value.trim();
-  const state = document.getElementById('sf-state').value.trim();
-  const situation = document.getElementById('sf-situation').value.trim();
-  const email = document.getElementById('sf-email').value.trim();
-  const phone = document.getElementById('sf-phone').value.trim();
-  const instagram = document.getElementById('sf-instagram').value.trim();
-  const whatsapp = document.getElementById('sf-whatsapp').value.trim();
-  const copyEmail = document.getElementById('sf-copy').value.trim();
-  const contactError = document.getElementById('spanish-contact-error');
-
-  if(!name || !state || !situation){ alert('Por favor completa tu nombre, estado y condado, y cuéntanos qué está pasando.'); return; }
-  if(!email && !phone && !instagram && !whatsapp){ contactError.style.display='block'; return; }
+  const name=document.getElementById('sf-name').value.trim();
+  const state=document.getElementById('sf-state').value.trim();
+  const situation=document.getElementById('sf-situation').value.trim();
+  const email=document.getElementById('sf-email').value.trim();
+  const phone=document.getElementById('sf-phone').value.trim();
+  const instagram=document.getElementById('sf-instagram').value.trim();
+  const whatsapp=document.getElementById('sf-whatsapp').value.trim();
+  const copyEmail=document.getElementById('sf-copy').value.trim();
+  const contactError=document.getElementById('spanish-contact-error');
+  if(!name||!state||!situation){alert('Por favor completa tu nombre, estado y condado, y cuéntanos qué está pasando.');return;}
+  if(!email&&!phone&&!instagram&&!whatsapp){contactError.style.display='block';return;}
   contactError.style.display='none';
-
-  const btn = document.getElementById('spanish-submit-btn');
-  btn.disabled=true; btn.textContent='Enviando...';
-
+  const btn=document.getElementById('spanish-submit-btn');
+  btn.disabled=true;btn.textContent='Enviando...';
   try{
-    await fetch(FORMSPREE, {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify({
-        _subject: 'Nueva Solicitud DUN (Español) — ' + name,
-        _replyto: email || copyEmail || '',
-        nombre: name,
-        estado_condado: state,
-        situacion: situation,
-        correo: email || 'No proporcionado',
-        telefono: phone || 'No proporcionado',
-        instagram: instagram || 'No proporcionado',
-        whatsapp: whatsapp || 'No proporcionado',
-        copia_solicitada: copyEmail || 'No',
-        idioma: 'Español'
-      })
-    });
+    await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'Nueva Solicitud DUN (Español) — '+name,_replyto:email||copyEmail||'',nombre:name,estado_condado:state,situacion:situation,correo:email||'No proporcionado',telefono:phone||'No proporcionado',instagram:instagram||'No proporcionado',whatsapp:whatsapp||'No proporcionado',copia_solicitada:copyEmail||'No',idioma:'Español'})});
     document.getElementById('spanish-form-container').style.display='none';
     document.getElementById('spanish-success').style.display='block';
-  }catch(e){
-    btn.disabled=false; btn.textContent='Enviar a Devon';
-    alert('Algo salió mal. Por favor envía un correo directamente a devonisdun@gmail.com');
-  }
+  }catch(e){btn.disabled=false;btn.textContent='Enviar a Devon';alert('Algo salió mal. Por favor envía un correo directamente a devonisdun@gmail.com');}
 }
 
 async function submitBizForm(){
-  const name = document.getElementById('bf-name').value.trim();
-  const org = document.getElementById('bf-org').value.trim();
-  const type = document.getElementById('bf-type').value;
-  const pain = document.getElementById('bf-pain').value.trim();
-  const interest = document.getElementById('bf-interest').value.trim();
-  const email = document.getElementById('bf-email').value.trim();
-
-  if(!name || !org || !type || !pain || !interest || !email){
-    alert('Please fill in all required fields.');
-    return;
-  }
-
-  const btn = document.getElementById('biz-submit-btn');
-  btn.disabled=true; btn.textContent='Sending...';
-
+  const name=document.getElementById('bf-name').value.trim();
+  const org=document.getElementById('bf-org').value.trim();
+  const type=document.getElementById('bf-type').value;
+  const pain=document.getElementById('bf-pain').value.trim();
+  const interest=document.getElementById('bf-interest').value.trim();
+  const email=document.getElementById('bf-email').value.trim();
+  if(!name||!org||!type||!pain||!interest||!email){alert('Please fill in all required fields.');return;}
+  const btn=document.getElementById('biz-submit-btn');
+  btn.disabled=true;btn.textContent='Sending...';
   try{
-    await fetch(FORMSPREE, {
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify({
-        _subject: 'DUN for Business Inquiry — ' + org,
-        _replyto: email,
-        contact_name: name,
-        title: document.getElementById('bf-title').value.trim() || 'Not provided',
-        organization: org,
-        org_type: type,
-        staff_size: document.getElementById('bf-staff').value || 'Not provided',
-        clients_per_year: document.getElementById('bf-clients').value || 'Not provided',
-        current_process: document.getElementById('bf-current').value.trim() || 'Not provided',
-        biggest_pain_point: pain,
-        impact_if_solved: document.getElementById('bf-impact').value.trim() || 'Not provided',
-        budget_status: document.getElementById('bf-budget').value || 'Not provided',
-        timeline: document.getElementById('bf-timeline').value || 'Not provided',
-        interest_in_dun: interest,
-        email: email,
-        phone: document.getElementById('bf-phone').value.trim() || 'Not provided',
-        submission_type: 'DUN for Business'
-      })
-    });
+    await fetch(FORMSPREE,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:'DUN for Business Inquiry — '+org,_replyto:email,contact_name:name,title:document.getElementById('bf-title').value.trim()||'Not provided',organization:org,org_type:type,staff_size:document.getElementById('bf-staff').value||'Not provided',clients_per_year:document.getElementById('bf-clients').value||'Not provided',current_process:document.getElementById('bf-current').value.trim()||'Not provided',biggest_pain_point:pain,impact_if_solved:document.getElementById('bf-impact').value.trim()||'Not provided',budget_status:document.getElementById('bf-budget').value||'Not provided',timeline:document.getElementById('bf-timeline').value||'Not provided',interest_in_dun:interest,email:email,phone:document.getElementById('bf-phone').value.trim()||'Not provided',submission_type:'DUN for Business'})});
     document.getElementById('biz-form-container').style.display='none';
     document.getElementById('biz-success').style.display='block';
-  }catch(e){
-    btn.disabled=false; btn.textContent='Send to Devon';
-    alert('Something went wrong. Please email devonisdun@gmail.com directly.');
-  }
+  }catch(e){btn.disabled=false;btn.textContent='Send to Devon';alert('Something went wrong. Please email devonisdun@gmail.com directly.');}
 }
 </script>
 </body>
